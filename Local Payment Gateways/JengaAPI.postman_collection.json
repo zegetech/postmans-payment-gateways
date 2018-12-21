@@ -1,0 +1,1253 @@
+{
+	"info": {
+		"_postman_id": "7e1468b4-7a42-4a72-b377-e3e583159e8c",
+		"name": "JengaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Get Your JengaWS Access Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic QWEzY0dxRVpWOVo5dDFVSnhTR3BwZUF4WEZrcFFyYUk6cU5BYWs5YXcyVDNtSW1uMg=="
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "0582910862",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "vLcQDQwDYF1hOU9Xiq3O16DGtJgBlIcT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/identity-test/v2/token",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"identity-test",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account Services",
+			"item": [
+				{
+					"name": "Account Balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer AtGFwIi6Qtlf72sG62935p4AJNDF"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/account-test/v2/accounts/balances/KE/0011547896523",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"account-test",
+								"v2",
+								"accounts",
+								"balances",
+								"KE",
+								"0011547896523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account MINI Statement",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer AtGFwIi6Qtlf72sG62935p4AJNDF"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/account-test/v2/accounts/ministatement/KE/0011547896523",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"account-test",
+								"v2",
+								"accounts",
+								"ministatement",
+								"KE",
+								"0011547896523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account Full Statement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer isBZZG53Wm2uQjQ9GZiYWcrY6cHG"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"countryCode\": \"KE\",\r\n   \"accountNumber\": \"0011547896523\",\r\n   \"fromDate\": \"2018-01-18\",\r\n   \"toDate\": \"2018-04-19\",\r\n   \"limit\": 3,\r\n   \"reference\": \"\",\r\n   \"serial\": \"\",\r\n   \"postedDateTime\": \"\",\r\n   \"date\": \"\",\r\n   \"runningBalance\": {\r\n      \"currency\": \"\",\r\n      \"amount\": 0.0\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/account-test/v2/accounts/fullstatement",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"account-test",
+								"v2",
+								"accounts",
+								"fullstatement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Opening and Closing Account Balance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer isBZZG53Wm2uQjQ9GZiYWcrY6cHG"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"countryCode\": \"KE\",\r\n   \"accountId\": \"0011547896523\",\r\n   \"date\": \"2017-09-29\"\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/account-test/v2/accountbalance/query",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"account-test",
+								"v2",
+								"accountbalance",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account Inquiry - Bank Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer isBZZG53Wm2uQjQ9GZiYWcrY6cHG"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/account-test/v2/accounts/search/KE/0011547896523",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"account-test",
+								"v2",
+								"accounts",
+								"search",
+								"KE",
+								"0011547896523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank Account - Name Lookup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer AtGFwIi6Qtlf72sG62935p4AJNDF",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"countryCode\": \"KE\",\r\n   \"merchantAccountID\": \"1234567891234\",\r\n   \"accountId\": \"1234567891234\"\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/account-test/v2/accountname/lookup",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"account-test",
+								"v2",
+								"accountname",
+								"lookup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Send Money",
+			"item": [
+				{
+					"name": "Send Money - Within Equity Bank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer c0AsmYNjtu9dFLJyT91C3GxKtXog"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "Jj0eiBdPj+mregmuHys53XDRKc/fvcviD+bQEIzvQ3eEzR6/8aDw9Hs5+DjKEQMdPw8lS+GUx4RDPUmmdnn5fBUi/bt8QeYLEAOPI9hU/rJdWSDXzSBd/eGCnVi7Ac3wyPRih58Y9SRAyZBJSijkcOUctfhHyXxAd2mfygPLkKgwWnPzLJSrlQBmj5WOR3IUxD63Q9C/nph+nFSdlwg6xm9Jlz0K1YZDWPlJau82tGZKNdp6NWWgdyp4AloGVpUatCmeyBFTycyTjspGGrJJWI3GfQQJbasmKVdOehrs7rBWf2RN8P+Bll6C8WaW5PaUDuTH3lDeyyWXiLyhYfNnrys0huBNATKgsMI4LJo026zoQk1/1fS+fu1Gs5qI4iS4PLZgz2ho5jh1RY9mqGSkC9d0RVMHMzjvYIRFiVqBSr3LXbRMOJ/ltCbMPzcEuHUz5zyc9yZlu62JhQDSpTdQIspxW2PncuT0bSmg4IcqCT88bL9u5oCmPKLssMmXsCcd8GkTpkPjDNd/m9SZAvTrOst9RTzPkna/9hXKqexEYRU00UBood+LWxIDZNM10fBGW5iywEVsJBYAlXwhbt4uPdeIHUKtz/h8s3f1r2k9Xlzm7cmaeZdDygqeosPgwBAI3mvopB0kGolpubE2Scs/SXGyD26zFCXLg5rIsJxqoIY="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"source\": {\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"John Doe\",\r\n      \"accountNumber\": \"0170191533451\"\r\n   },\r\n   \"destination\": {\r\n      \"type\": \"bank\",\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"Tom Doe\",\r\n      \"accountNumber\": \"1160161911708\"\r\n   },\r\n   \"transfer\": {\r\n      \"type\": \"InternalFundsTransfer\",\r\n      \"amount\": \"100.00\",\r\n      \"currencyCode\": \"KES\",\r\n      \"reference\": \"742194625798\",\r\n      \"date\": \"2018-09-12\",\r\n      \"description\": \"Some remarks here\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Money - To Mobile Wallets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 69zW8gayVIBFGJuNxcAvzPeMDPFy"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"source\": {\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"Tom Doe\",\r\n      \"accountNumber\": \"0011547896523\"\r\n   },\r\n   \"destination\": {\r\n      \"type\": \"mobile\",\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"John Doe\",\r\n      \"mobileNumber\": \"0763555619\",\r\n      \"walletName\": \"Equitel\"\r\n   },\r\n   \"transfer\": {\r\n      \"type\": \"MobileWallet\",\r\n      \"amount\": \"20\",\r\n      \"currencyCode\": \"KES\",\r\n      \"reference\": \"692194625798\",\r\n      \"date\": \"2018-06-14\",\r\n      \"description\": \"Some remarks here\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Money - RTGS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 69zW8gayVIBFGJuNxcAvzPeMDPFy"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\": {\n        \"countryCode\": \"KE\",\n        \"name\": \"John Doe\",\n        \"accountNumber\": \"0011547896523\"\n    },\n    \"destination\": {\n        \"type\": \"bank\",\n        \"countryCode\": \"KE\",\n        \"name\": \"Tom Doe\",\n        \"bankCode\": \"70\",\n        \"accountNumber\": \"12365489\"\n    },\n    \"transfer\": {\n        \"type\": \"RTGS\",\n        \"amount\": \"4.00\",\n        \"currencyCode\": \"KES\",\n        \"reference\": \"692194625798\",\n        \"date\": \"2018-05-19\",\n        \"description\": \"Some remarks here\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Money - SWIFT",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ce0NHpa7ZaxmOFkbEbULABpu412fS4NQa",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "0582910862",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer 69zW8gayVIBFGJuNxcAvzPeMDPFy",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"source\": {\n      \"countryCode\": \"KE\",\n      \"name\": \"John Doe\",\n      \"accountNumber\": \"0011547896523\"\n   },\n   \"destination\": {\n      \"type\": \"bank\",\n      \"countryCode\": \"JP\",\n      \"name\": \"Tom Doe\",\n      \"bankBic\": \"BOTKJPJTXXX\",\n      \"accountNumber\": \"12365489\",\n      \"addressline1\": \"Post Box 56\"\n   },\n   \"transfer\": {\n      \"type\": \"SWIFT\",\n      \"amount\": \"4.00\",\n      \"currencyCode\": \"USD\",\n      \"reference\": \"692194625798\",\n      \"date\": \"2018-08-16\",\n      \"description\": \"Some remarks here\",\n      \"chargeOption\": \"SELF\"\n   }\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Money - EFT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  69zW8gayVIBFGJuNxcAvzPeMDPFy"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"source\": {\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"John Doe\",\r\n      \"accountNumber\": \"0011547896523\"\r\n   },\r\n   \"destination\": {\r\n      \"type\": \"bank\",\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"Tom Doe\",\r\n      \"bankCode\": \"01\",\r\n      \"branchCode\": \"112\",\r\n      \"accountNumber\": \"54545\"\r\n   },\r\n   \"transfer\": {\r\n      \"type\": \"EFT\",\r\n      \"amount\": \"4.00\",\r\n      \"currencyCode\": \"KES\",\r\n      \"reference\": \"692194625798\",\r\n      \"date\": \"2018-02-30\",\r\n      \"description\": \"Some remarks here\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesalink - To Bank Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  ZhRJ2FxeUgVx8owLkEiafhQyALSq"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"source\": {\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"John Doe\",\r\n      \"accountNumber\": \"0011547896523\"\r\n   },\r\n   \"destination\": {\r\n      \"type\": \"bank\",\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"Tom Doe\",\r\n      \"bankCode\": \"63\",\r\n      \"accountNumber\": \"0090207635001\"\r\n   },\r\n   \"transfer\": {\r\n      \"type\": \"PesaLink\",\r\n      \"amount\": \"4.00\",\r\n      \"currencyCode\": \"KES\",\r\n      \"reference\": \"692194625798\",\r\n      \"date\": \"2018-05-08\",\r\n      \"description\": \"Some remarks here\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesalink - To Mobile Number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer NB3EtEuoImkkSP62yxNAXd18He9O"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"source\": {\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"John Doe\",\r\n      \"accountNumber\": \"0011547896523\"\r\n   },\r\n   \"destination\": {\r\n      \"type\": \"mobile\",\r\n      \"countryCode\": \"KE\",\r\n      \"name\": \"Tom Doe\",\r\n      \"bankCode\": \"01\",\r\n      \"mobileNumber\": \"0722000000\"\r\n   },\r\n   \"transfer\": {\r\n      \"type\": \"PesaLink\",\r\n      \"amount\": \"40.00\",\r\n      \"currencyCode\": \"KES\",\r\n      \"reference\": \"692194625798\",\r\n      \"date\": \"2018-04-30\",\r\n      \"description\": \"Some remarks here\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/remittance",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Send Money Queries",
+			"item": [
+				{
+					"name": "Account Inquiry - Pesalink Banks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer NB3EtEuoImkkSP62yxNAXd18He9O"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"mobileNumber\": \"0722000000\"\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/pesalink/inquire",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"pesalink",
+								"inquire"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receive Money",
+			"item": [
+				{
+					"name": "Receive Payments - Eazzypay Push",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer yy9FyjzQ5ggGsPbnCVsI10Ici6er"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "0763555289"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"customer\": {\r\n      \"mobileNumber\": \"0765555125\",\r\n      \"countryCode\": \"KE\"\r\n   },\r\n   \"transaction\": {\r\n      \"amount\": \"105.00\",\r\n      \"description\": \"A short description\",\r\n      \"type\": \"exampleType\",\r\n      \"reference\": \"5454512\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/payments",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receive Payments - Lipa na M-Pesa Online",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer Bk2ImTpR5OB5oyiZ7yxhgWCTCdRc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "effejfhqjfh"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"customer\": {\r\n      \"mobileNumber\": \"0720978610\",\r\n      \"countryCode\": \"KE\"\r\n   },\r\n   \"transaction\": {\r\n      \"amount\": \"100\",\r\n      \"description\": \"test STKPUSH\",\r\n      \"businessNumber\": \"174379\",\r\n      \"reference\": \"ref\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2mk/payment/mpesastkpush",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2mk",
+								"payment",
+								"mpesastkpush"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receive Payments - Bill Payments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"biller\": {\n      \"billerCode\": \"320320\",\n      \"countryCode\": \"KE\"\n   },\n   \"bill\": {\n      \"reference\": \"101704\",\n      \"amount\": \"111.00\",\n      \"currency\": \"KES\"\n   },\n   \"payer\": {\n      \"name\": \"A. N Other\",\n      \"account\": \"101704\",\n      \"reference\": \"123456729123\",\n      \"mobileNumber\": \"0764555320\"\n   },\n   \"partnerId\": \"0011547896523\",\n   \"remarks\": \"These are just some remarks\"\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/bills/pay",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"bills",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receive Payments - Merchant Payments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"merchant\": {\r\n      \"till\": \"0766112112\"\r\n   },\r\n   \"payment\": {\r\n      \"ref\": \"123456789123\",\r\n      \"amount\": \"1000.00\",\r\n      \"currency\": \"KES\"\r\n   },\r\n   \"partner\": {\r\n      \"id\": \"0011547896523\",\r\n      \"ref\": \"987654321\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/tills/pay",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"tills",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bill Validation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer NzfgEhHGAd42cR3N3B0KF6uDygow"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"billerCode\": \"320320\",\r\n   \"customerRefNumber\": \"28055948\",\r\n   \"amount\": \"1000.00\",\r\n   \"amountCurrency\": \"KES\"\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/bills/validation",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"bills",
+								"validation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund Payment - Eazzypay Push",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer vVX5VzAujjTRxDo68y1IdEvRYm3B"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transaction\": {\r\n    \"reference\": \"692194625798\",\r\n    \"amount\": \"100.00\",\r\n    \"service\": \"EazzyPayOnline\",\r\n    \"channel\": \"EAZ\",\r\n    \"description\": \"please work\",\r\n    \"type\": \"reversal\"\r\n  },\r\n  \"customer\": {\r\n    \"mobileNumber\": \"0766555289\",\r\n    \"countryCode\": \"KE\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/payments/refund",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"payments",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MIGS Card Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer FNwhIlnwqP8E5711c1aXQ5N1Xn1G"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"transaction\": {\r\n      \"reference\": \"23444\",\r\n      \"orderRef\": \"8777738\",\r\n      \"amount\": \"2700\",\r\n\t  \"currency\": \"KES\",\r\n      \"description\": \"Test Card Payment\",\r\n      \"orderExpiry\": \"2018-08-25T19:00:00\",\r\n      \"date\": \"2018-08-27T11:49:58+00:00\",\r\n      \"postedDate\": \"2018-08-27T11:49:58\",\r\n      \"valueDate\": \"2018-08-27+00:00\",\r\n      \"billerCode\": \"900900\"\r\n   },\r\n   \"card\": {\r\n      \"number\": \"4055014123456789\",\r\n      \"expiry\": \"1810\",\r\n      \"securityCode\": \"125\"\r\n   },\r\n   \"customer\": {\r\n      \"name\": \"A N Other\",\r\n      \"customerid\": \"0000000000\",\r\n      \"mobileNumber\": \"0763978610\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/migs/payment",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"migs",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receive Money Queries",
+			"item": [
+				{
+					"name": "Get Payment Status - Eazzypay Push",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/payments/692194625798",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"payments",
+								"692194625798"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Payment Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer t11NgX6GYG4FNtQSdAAIHx1j2MV8"
+							},
+							{
+								"key": "signature",
+								"value": "kmkknk",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/payments/details/689632147856",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"payments",
+								"details",
+								"689632147856"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All EazzyPay Merchants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/merchants?per_page=1&page=1",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"merchants"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Billers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/billers?per_page=3&page=6",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"billers"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Airtime",
+			"item": [
+				{
+					"name": "Purchase Airtime",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer rD1sle0mnC2zGG9Udma8GXQRMmFt"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer\": {\r\n    \"countryCode\": \"KE\",\r\n    \"mobileNumber\": \"0765555131\"\r\n  },\r\n  \"airtime\": {\r\n    \"amount\": \"100\",\r\n    \"reference\": \"692194625798\",\r\n    \"telco\": \"Equitel\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/airtime",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"airtime"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loans",
+			"item": [
+				{
+					"name": "Credit Score",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  EGB8dlqqAQv4EsyTbgtyzvEPwbHB"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\": [{\r\n        \"id\": \"\",\r\n        \"fullName\": \"\",\r\n        \"firstName\": \"\",\r\n        \"lastName\": \"\",\r\n        \"shortName\": \"\",\r\n        \"title\": \"\",\r\n        \"mobileNumber\": \"\",\r\n        \"dateOfBirth\": \"1982-07-31\",\r\n        \"identityDocument\": {\r\n            \"documentType\": \"NationalID\",\r\n            \"documentNumber\": \"12365478\"\r\n        }\r\n    }],\r\n    \"bureau\": {\r\n        \"reportType\": \"Mobile\",\r\n        \"countryCode\": \"KE\"\r\n    },\r\n    \"loan\": {\r\n        \"amount\": \"5000\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/customer-test/v2/creditinfo",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"customer-test",
+								"v2",
+								"creditinfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forex Rates",
+			"item": [
+				{
+					"name": "Get Forex Rates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eN8AtyKuZGpBS71m01GgNviZzdih"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"countryCode\": \"KE\",\r\n   \"currencyCode\": \"USD\"\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/transaction-test/v2/foreignexchangerates",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"transaction-test",
+								"v2",
+								"foreignexchangerates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "KYC",
+			"item": [
+				{
+					"name": "ID Search & Verification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer rD1sle0mnC2zGG9Udma8GXQRMmFt"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"identity\": {\r\n      \"documentType\": \"ID\",\r\n      \"firstName\": \"John\",\r\n      \"lastName\": \"Doe\",\r\n      \"dateOfBirth\": \"1970-01-30\",\r\n      \"documentNumber\": \"123456\",\r\n      \"countryCode\": \"KE\"\r\n   }\r\n}"
+						},
+						"url": {
+							"raw": "https://sandbox.jengahq.io/customer-test/v2/identity/verify",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"jengahq",
+								"io"
+							],
+							"path": [
+								"customer-test",
+								"v2",
+								"identity",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

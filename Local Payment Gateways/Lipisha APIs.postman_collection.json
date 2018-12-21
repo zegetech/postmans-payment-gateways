@@ -1,0 +1,1263 @@
+{
+	"info": {
+		"_postman_id": "ac838feb-a6b7-4e7f-9342-1b65c652e6b0",
+		"name": "Lipisha APIs",
+		"description": "Lipisha a kenyan payment gateway. [link](https://lipisha.com/payments/accounts/index.php/app/launch/features)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "settlement",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "api_version",
+									"value": "1.3.0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "api_type",
+									"value": "callback",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction",
+									"value": "EWFAIDZ6M",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_type",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_method",
+									"value": "Deposit",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_status",
+									"value": "Requested",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_date_start",
+									"value": "2013-12-18",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_account_name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_account_number",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "transaction_reference",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/get_transactions",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"get_transactions"
+							]
+						},
+						"description": "This API call returns all transactions matching the specified query parameters."
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm transaction exists",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction",
+									"value": "IEFB8FING",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/confirm_transaction",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"confirm_transaction"
+							]
+						},
+						"description": "This API call checks whether a transaction exists given a transaction code and returns the full details of the transaction."
+					},
+					"response": []
+				},
+				{
+					"name": "acknowledge transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction",
+									"value": "IEFB8FING",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/acknowledge_transaction",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"acknowledge_transaction"
+							]
+						},
+						"description": "This API call flags a transaction as having been processed by your application. This API call is particularly useful when processing e-commerce transactions and validating a payment."
+					},
+					"response": []
+				},
+				{
+					"name": "Reconcile transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction",
+									"value": "IEFB8FING",
+									"type": "text"
+								},
+								{
+									"key": "transaction_mobile_number",
+									"value": "0794566935",
+									"type": "text"
+								},
+								{
+									"key": "transaction_account_number",
+									"value": "00155",
+									"type": "text"
+								},
+								{
+									"key": "transaction_reference",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/reconcile_transaction",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"reconcile_transaction"
+							]
+						},
+						"description": "This API call searches and reconciles transactions that have been sent with an invalid or missing account and moves it to the specified account from the reconciliations queue. If successful, it triggers the Instant Payment Notification process sending relevant SMS, email and IPN URL notification."
+					},
+					"response": []
+				},
+				{
+					"name": "Reverse transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction",
+									"value": "EWFAIDZ6M",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/reverse_transaction",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"reverse_transaction"
+							]
+						},
+						"description": "This API call reverses one or more transactions and refunds the payments back to the customers. The API call requires that there is enough balance in the account to meet the amount to be reversed."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Balance",
+			"item": [
+				{
+					"name": "Get balance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction",
+									"value": "EWFAIDZ6M",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/get_balance",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"get_balance"
+							]
+						},
+						"description": "This API call reverses one or more transactions and refunds the payments back to the customers. The API call requires that there is enough balance in the account to meet the amount to be reversed."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Float",
+			"item": [
+				{
+					"name": "Get float",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "account_number",
+									"value": "06062",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/get_float",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"get_float"
+							]
+						},
+						"description": "Returns the float in a transaction account."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "Authorize card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "account_number",
+									"value": "06062",
+									"type": "text"
+								},
+								{
+									"key": "card_number",
+									"value": "4242424242424242",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "Uganda",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "250000",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Nairobi",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "KES",
+									"type": "text"
+								},
+								{
+									"key": "security_code",
+									"value": "003",
+									"type": "text"
+								},
+								{
+									"key": "expiry",
+									"value": "062020",
+									"type": "text"
+								},
+								{
+									"key": "address1",
+									"value": "1000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/authorize_card_transaction",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"authorize_card_transaction"
+							]
+						},
+						"description": "This API call for authorizes a credit card transaction locking in the specified amount in the card holder's bank account.\n\nThe transaction then needs to be completed using the Complete Card Transaction API call to effect settlement of funds into the merchant's account or reversed using the Reverse Card Transaction API call.\n\nThis function reserves funds on the cardholder's account and if successful then you must call the complete_card_transaction function with the transaction_index and transaction_reference returned by this function to actually move the money to your account.\n\nKindly note that in some cases, debit card transactions may be settled before the Complete Card Transaction API call is completed and may NOT be reversible depending on the issuing bank.\n\nAPI Endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction_index",
+									"value": "68D3654D-8C96-4722-BA5F-EF15A204C2E5",
+									"type": "text"
+								},
+								{
+									"key": "transaction_reference",
+									"value": "40435",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/complete_card_transaction",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"complete_card_transaction"
+							]
+						},
+						"description": "This API call completes a credit card transaction and initiates settlement of funds from the cardholder bank account into the merchant's account.\n\nThis function moves already reserved funds on the cardholder's account into your account. It's called with the transaction_index and transaction_reference returned by the authorize_card_transaction function to actually move the money to your account."
+					},
+					"response": []
+				},
+				{
+					"name": "Reverse card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction_index",
+									"value": "68D3654D-8C96-4722-BA5F-EF15A204C2E5",
+									"type": "text"
+								},
+								{
+									"key": "transaction_reference",
+									"value": "40435",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/reverse_card_authorization",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"reverse_card_authorization"
+							]
+						},
+						"description": "This API call for reverses an authorized credit card transaction.\nThis function unreserves funds previously authorized. It's called with the transaction_index and transaction_reference returned by the authorize_card_transaction function to reverse the authorization."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "settlement",
+			"item": [
+				{
+					"name": "Authorize settlement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "transaction",
+									"value": "JN9UM1IJJ5",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "35000",
+									"type": "text"
+								},
+								{
+									"key": "account_number",
+									"value": "06062",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/request_settlement",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"request_settlement"
+							]
+						},
+						"description": "This API call requests a settlement of the account balance to a transaction or withdrawal account."
+					},
+					"response": []
+				},
+				{
+					"name": "Request Settlement.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "account_number",
+									"value": "06062",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "35000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/request_settlement",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"request_settlement"
+							]
+						},
+						"description": "This API call requests a settlement of the account balance to a transaction or withdrawal account."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Jane Doe",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Sales",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "254178693415",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jane@jane.com",
+									"type": "text"
+								},
+								{
+									"key": "user_name",
+									"value": "Accountant",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/create_user",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"create_user"
+							]
+						},
+						"description": "This API call creates a user under your Account."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Create role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "30db03e656304de6af665123b1023b1a",
+									"type": "text"
+								},
+								{
+									"key": "api_signature",
+									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Jane Doe",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Sales",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "254178693415",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jane@jane.com",
+									"type": "text"
+								},
+								{
+									"key": "user_name",
+									"value": "Accountant",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://developer.lipisha.com/index.php/v2/api/create_role",
+							"protocol": "http",
+							"host": [
+								"developer",
+								"lipisha",
+								"com"
+							],
+							"path": [
+								"index.php",
+								"v2",
+								"api",
+								"create_role"
+							]
+						},
+						"description": "This API call creates a role."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "30db03e656304de6af665123b1023b1a",
+							"type": "text"
+						},
+						{
+							"key": "api_signature",
+							"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+							"type": "text"
+						},
+						{
+							"key": "customer_name",
+							"value": "guess",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://developer.lipisha.com/index.php/v2/api/get_customers",
+					"protocol": "http",
+					"host": [
+						"developer",
+						"lipisha",
+						"com"
+					],
+					"path": [
+						"index.php",
+						"v2",
+						"api",
+						"get_customers"
+					]
+				},
+				"description": "This API call returns all customers matching the specified query parameters."
+			},
+			"response": []
+		},
+		{
+			"name": "Send money",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "30db03e656304de6af665123b1023b1a",
+							"type": "text"
+						},
+						{
+							"key": "api_signature",
+							"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+							"type": "text"
+						},
+						{
+							"key": "account_number",
+							"value": "06062",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "0745869324",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://developer.lipisha.com/index.php/v2/api/send_money",
+					"protocol": "http",
+					"host": [
+						"developer",
+						"lipisha",
+						"com"
+					],
+					"path": [
+						"index.php",
+						"v2",
+						"api",
+						"send_money"
+					]
+				},
+				"description": "Credits the mobile money wallet e.g M-pesa, of your customer from the float in your payout account. The customer gets a mobile money SMS confirmation on their phone on receiving the money."
+			},
+			"response": []
+		},
+		{
+			"name": "Send airtime",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "30db03e656304de6af665123b1023b1a",
+							"type": "text"
+						},
+						{
+							"key": "api_signature",
+							"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+							"type": "text"
+						},
+						{
+							"key": "account_number",
+							"value": "06063",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "0718751741",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://developer.lipisha.com/index.php/v2/api/send_airtime",
+					"protocol": "http",
+					"host": [
+						"developer",
+						"lipisha",
+						"com"
+					],
+					"path": [
+						"index.php",
+						"v2",
+						"api",
+						"send_airtime"
+					]
+				},
+				"description": "Credits the mobile money wallet e.g M-pesa, of your customer from the float in your payout account. The customer gets a mobile money SMS confirmation on their phone on receiving the money."
+			},
+			"response": []
+		},
+		{
+			"name": "Send SMS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "30db03e656304de6af665123b1023b1a",
+							"type": "text"
+						},
+						{
+							"key": "api_signature",
+							"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+							"type": "text"
+						},
+						{
+							"key": "account_number",
+							"value": "06062",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "0718751741",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "This is a test.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://developer.lipisha.com/index.php/v2/api/send_sms",
+					"protocol": "http",
+					"host": [
+						"developer",
+						"lipisha",
+						"com"
+					],
+					"path": [
+						"index.php",
+						"v2",
+						"api",
+						"send_sms"
+					]
+				},
+				"description": "Sends a text message via SMS to your customer.\nOnce completed, it sends an Instant Transaction Notification or webhook event to your callback URL for you to process the transaction."
+			},
+			"response": []
+		},
+		{
+			"name": "Get customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "30db03e656304de6af665123b1023b1a",
+							"type": "text"
+						},
+						{
+							"key": "api_signature",
+							"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
+							"type": "text"
+						},
+						{
+							"key": "customer_name",
+							"value": "susan",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "customer_mobile_number",
+							"value": "123456789",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "customer_email",
+							"value": "someone@gmail.com",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://developer.lipisha.com/index.php/v2/api/get_customers",
+					"protocol": "http",
+					"host": [
+						"developer",
+						"lipisha",
+						"com"
+					],
+					"path": [
+						"index.php",
+						"v2",
+						"api",
+						"get_customers"
+					]
+				},
+				"description": "Sends a text message via SMS to your customer.\nOnce completed, it sends an Instant Transaction Notification or webhook event to your callback URL for you to process the transaction."
+			},
+			"response": []
+		}
+	]
+}

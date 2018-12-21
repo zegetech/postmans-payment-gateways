@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "b97cb99c-0bea-46f4-b918-564648eaaff0",
+		"name": "iPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "transact",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ccbd8244-a96d-4701-a276-59834ced271c",
+						"exec": [
+							"//let CryptoJS = require('crypto-js');",
+							"let seckey = \"demo\";",
+							"console.log(pm.request.body.raw);",
+							"let datajson = JSON.parse(pm.request.body.raw);",
+							"delete datajson.hash;",
+							"console.log(datajson)",
+							"let dataString = datajson.live + datajson.oid + datajson.inv + datajson.amount + datajson.tel + datajson.eml + datajson.vid + datajson.curr + datajson.p1 + datajson.p2 + datajson.p3 + datajson.p4 + datajson.cst + datajson.cbk",
+							"",
+							"dataString = dataString.replace(/undefined/g,\"\");",
+							"console.log(dataString)",
+							"let hash = CryptoJS.HmacSHA256(dataString, seckey).toString();",
+							"// pm.environment.set(\"hash\",hash);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"live\": 0,\n\t\"oid\": \"some-fictitious-id1\",\n\t\"inv\": \"some-fictitious-in1\",\n\t\"amount\": 10,\n\t\"vid\":\"demo\",\n\t\"curr\": \"KES\",\n\t\"hash\":\"337595f88a1111fb7dff911fda4e7c35318e53e8f20249458238454dfa6bfd0e\"\n}"
+				},
+				"url": {
+					"raw": "https://apis.ipayafrica.com/payments/v2/transact",
+					"protocol": "https",
+					"host": [
+						"apis",
+						"ipayafrica",
+						"com"
+					],
+					"path": [
+						"payments",
+						"v2",
+						"transact"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register transaction",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"live\": 0,\n\t\"oid\": \"some-fictitious-id1\",\n\t\"inv\": \"some-fictitious-in1\",\n\t\"amount\": 10,\n\t\"vid\":\"demo\",\n\t\"curr\": \"KES\",\n\t\"hash\":\"337595f88a1111fb7dff911fda4e7c35318e53e8f20249458238454dfa6bfd0e\"\n}"
+						},
+						"url": {
+							"raw": "https://apis.ipayafrica.com/payments/v2/transact",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"ipayafrica",
+								"com"
+							],
+							"path": [
+								"payments",
+								"v2",
+								"transact"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:56:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48b27987da1f2c96-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"header_status\": 200,\n    \"status\": 1,\n    \"data\": {\n        \"sid\": \"SOMDEM31454154514496218016475DEMO\",\n        \"oid\": \"somefictitiousid1\",\n        \"amount\": \"10\",\n        \"account\": \"\",\n        \"payment_channels\": [\n            {\n                \"name\": \"MPESA\",\n                \"paybill\": \"510800\"\n            },\n            {\n                \"name\": \"AIRTEL\",\n                \"paybill\": \"510800\"\n            },\n            {\n                \"name\": \"EQUITEL\",\n                \"paybill\": \"510800\"\n            }\n        ],\n        \"hash\": \"4544d3f135d5ddc9084049fffed1860f41831883ca79f51a7b49eb9e56b0d8a8\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "transact/mobilemoney",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ccbd8244-a96d-4701-a276-59834ced271c",
+						"exec": [
+							"//let CryptoJS = require('crypto-js');",
+							"let seckey = \"demo\";",
+							"let datajson = JSON.parse(pm.request.body.raw);",
+							"delete datajson.hash;",
+							"console.log(datajson)",
+							"let dataString = datajson.sid+datajson.vid;",
+							"dataString = dataString.replace(/undefined/g,\"\");",
+							"console.log(dataString)",
+							"let hash = CryptoJS.HmacSHA256(dataString, seckey).toString(CryptoJS.enc.Hex);",
+							"// pm.environment.set(\"hash\",hash);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"vid\":\"demo\",\n\t\"sid\":\"SOMDEM31454154453760281529499DEMO\",\n\t\"hash\":\"da809790871c46419dadd52d3cc014068bec0204749c134b8e15c7aab8d42893\"\n}"
+				},
+				"url": {
+					"raw": "https://apis.ipayafrica.com/payments/v2/transact/mobilemoney",
+					"protocol": "https",
+					"host": [
+						"apis",
+						"ipayafrica",
+						"com"
+					],
+					"path": [
+						"payments",
+						"v2",
+						"transact",
+						"mobilemoney"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "transact/mobilemoney",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"vid\":\"demo\",\n\t\"sid\":\"SOMDEM31454154453760281529499DEMO\",\n\t\"hash\":\"da809790871c46419dadd52d3cc014068bec0204749c134b8e15c7aab8d42893\"\n}"
+						},
+						"url": {
+							"raw": "https://apis.ipayafrica.com/payments/v2/transact/mobilemoney",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"ipayafrica",
+								"com"
+							],
+							"path": [
+								"payments",
+								"v2",
+								"transact",
+								"mobilemoney"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:57:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48b27bb30edc2c96-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"txncd\": \"\",\n    \"qwh\": \"1681045292\",\n    \"afd\": \"127846538\",\n    \"poi\": \"144247607\",\n    \"uyt\": \"1296028717\",\n    \"ifd\": \"1702540391\",\n    \"agt\": \"\",\n    \"id\": \"somefictitiousid1\",\n    \"status\": \"bdi6p2yy76etrs\",\n    \"ivm\": \"somefictitiousid1\",\n    \"mc\": \"\",\n    \"p1\": \"\",\n    \"p2\": \"\",\n    \"p3\": \"\",\n    \"p4\": \"\",\n    \"msisdn_id\": \"\",\n    \"msisdn_idnum\": \"\",\n    \"channel\": \"Mobile Money\"\n}"
+				}
+			]
+		},
+		{
+			"name": "transaction/search",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ccbd8244-a96d-4701-a276-59834ced271c",
+						"exec": [
+							"//let CryptoJS = require('crypto-js');",
+							"let seckey = 'demo';",
+							"let datajson = JSON.parse(pm.request.body.raw);",
+							"delete datajson.hash;",
+							"console.log(datajson)",
+							"let dataString = datajson.oid+datajson.vid;",
+							"dataString = dataString.replace(/undefined/g,\"\");",
+							"console.log(dataString)",
+							"let hash = CryptoJS.HmacSHA256(dataString, seckey).toString(CryptoJS.enc.Hex);",
+							"// pm.environment.set(\"hash\",hash);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"vid\":\"demo\",\n\t\"oid\":\"some-fictitious-id1\",\n\t\"hash\":\"e05f7c66691a14b1932d636c05a5968880a819210b3c5bf0214b8ac026cdc100\"\n}"
+				},
+				"url": {
+					"raw": "https://apis.ipayafrica.com/payments/v2/transaction/search",
+					"protocol": "https",
+					"host": [
+						"apis",
+						"ipayafrica",
+						"com"
+					],
+					"path": [
+						"payments",
+						"v2",
+						"transaction",
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "transaction/search 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"vid\":\"demo\",\n\t\"oid\":\"some-fictitious-id1\",\n\t\"hash\":\"{{hash}}\"\n}"
+						},
+						"url": {
+							"raw": "https://apis.ipayafrica.com/payments/v2/transaction/search",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"ipayafrica",
+								"com"
+							],
+							"path": [
+								"payments",
+								"v2",
+								"transaction",
+								"search"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:58:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "167"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48b27ca809772c96-MBA"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"header_status\": 400,\n    \"error\": [\n        {\n            \"name\": \"hash\",\n            \"text\": \"Hash ID mismatch, please use the correct hash e05f7c66691a14b1932d636c05a5968880a819210b3c5bf0214b8ac026cdc100\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
