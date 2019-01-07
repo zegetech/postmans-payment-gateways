@@ -1,0 +1,565 @@
+{
+	"info": {
+		"_postman_id": "89db58da-1f4f-4f30-a1a0-bbb3873421ce",
+		"name": "Flutterwave Rave",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "charge",
+			"item": [
+				{
+					"name": "charge mpesa",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b2b52c9a-91bb-41a3-b4f2-7831fff73658",
+								"exec": [
+									"// this is the getKey function that generates an encryption Key for you by passing your Secret Key as a parameter.",
+									"function getKey(){",
+									"    var secKey = pm.variables.get(\"secret_key\");",
+									"    var md5 = require('md5');",
+									"    var keymd5 = md5(seckey);",
+									"    var keymd5last12 = keymd5.substr(-12);",
+									"",
+									"    var seckeyadjusted = seckey.replace('FLWSECK-', '');",
+									"    var seckeyadjustedfirst12 = seckeyadjusted.substr(0, 12);",
+									"",
+									"    return seckeyadjustedfirst12 + keymd5last12;",
+									"}",
+									"",
+									"// This is the encryption function that encrypts your payload by passing the stringified format and your encryption Key.",
+									"function encrypt(key, text)",
+									"{",
+									"    var CryptoJS = require('crypto-js');",
+									"    ",
+									"    return CryptoJS.TripleDES.encrypt(JSON.Stringify(pm.request.body), key);",
+									"}",
+									"",
+									"let rawParameters = {",
+									"    \"PBFPubKey\": pm.variables.get(\"public_key\"),",
+									"    \"currency\": \"KES\",",
+									"    \"country\": \"KE\",",
+									"    \"amount\": \"100\",",
+									"    \"phonenumber\": \"0926420185\",",
+									"    \"email\": \"user@exampe\",",
+									"    \"firstname\": \"jsksk\",",
+									"    \"lastname\": \"ioeoe\",",
+									"    \"IP\": \"40.14.290\",",
+									"    \"narration\": \"funds payment\",",
+									"    \"txRef\": \"jw-222\",",
+									"    \"meta\": [{metaname: \"extra info\", metavalue: \"a pie\"}],",
+									"    \"device_fingerprint\": \"89191918hgdgdg99191\", //(optional)",
+									"    \"payment_type\": \"mpesa\",",
+									"    \"is_mpesa\": \"1\",",
+									"  \t\"is_mpesa_lipa\": 1",
+									"};",
+									"",
+									"encParameters = encrypt(getKey(), rawParameters);",
+									"pm.environment.set(\"encrypted_body\", encParameters);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"PBFPubKey\": \"{{public_key}}\",\n  \"client\": \"{{encrypted_body}}\",\n  \"alg\": \"3DES-24\"\n}"
+						},
+						"url": {
+							"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/charge",
+							"protocol": "https",
+							"host": [
+								"ravesandboxapi",
+								"flutterwave",
+								"com"
+							],
+							"path": [
+								"flwv3-pug",
+								"getpaidx",
+								"api",
+								"charge"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "charge mpesa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"PBFPubKey\": \"FLWPUBK-779b68c1b6e9bdbcc19d6e8dc66eea41-X\",\n  \"client\": \"gAXSPEt2VR9faaMMtHMxIj6nLdGK9SnFd/CbMHa+dp0xe28jGGSdF4YjwTXA5yezDYUtW1hlJ7W9OeQlnP3hEFIu3hWhx0Vht+f0v8pzlLoPbsSc5/hNpTO8PQN3nKFBUyy2d0w001uogBpexz4ZOxeyGZ7Ypitq2TEidj6sKx/LXpQgygkltizGn1XC1xpliN2Am6U7VFKIAy8+CYI8uQHavzQUNywPM+tEYgIAhYK7tPWo53xVXVt+4jK9NvjcO+EEqJVHAD+qblKOemgRM41siz5kO8NMYkla2fHvgj6hAmrINpAwaH8EEBzBThEWwGSAwrNJn0PRpYya8RvUz6XQpCmafer4vf2VMiliBoc=\",\n  \"alg\": \"3DES-24\"\n}"
+								},
+								"url": {
+									"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/charge",
+									"protocol": "https",
+									"host": [
+										"ravesandboxapi",
+										"flutterwave",
+										"com"
+									],
+									"path": [
+										"flwv3-pug",
+										"getpaidx",
+										"api",
+										"charge"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, v3-xapp-id, flw-auth-token, mra-auth-token"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "PUT, POST, GET, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1250"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"4e2-6/yTkBzL7alfmzeemYmMHQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Dec 2018 14:48:05 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"V-COMP\",\n    \"data\": {\n        \"id\": 363140,\n        \"txRef\": \"some-false-ref01\",\n        \"orderRef\": \"0329717883\",\n        \"flwRef\": \"0329717883\",\n        \"redirectUrl\": \"http://127.0.0\",\n        \"device_fingerprint\": \"N/A\",\n        \"settlement_token\": null,\n        \"cycle\": \"one-time\",\n        \"amount\": 100,\n        \"charged_amount\": 100,\n        \"appfee\": 1.4,\n        \"merchantfee\": 0,\n        \"merchantbearsfee\": 0,\n        \"chargeResponseCode\": \"02\",\n        \"raveRef\": null,\n        \"chargeResponseMessage\": \"Successful, pending customer validation\",\n        \"authModelUsed\": \"LIPA_MPESA\",\n        \"currency\": \"KES\",\n        \"IP\": \"::ffff:10.51.233.68\",\n        \"narration\": \"funds payment\",\n        \"status\": \"success-pending-validation\",\n        \"modalauditid\": \"6e7bc537898d343f34dd23d4529e2341\",\n        \"vbvrespmessage\": \"N/A\",\n        \"authurl\": \"N/A\",\n        \"vbvrespcode\": \"N/A\",\n        \"acctvalrespmsg\": null,\n        \"acctvalrespcode\": null,\n        \"paymentType\": \"mpesa\",\n        \"paymentPlan\": null,\n        \"paymentPage\": null,\n        \"paymentId\": \"N/A\",\n        \"fraud_status\": \"ok\",\n        \"charge_type\": \"normal\",\n        \"is_live\": 0,\n        \"createdAt\": \"2018-12-18T14:47:59.000Z\",\n        \"updatedAt\": \"2018-12-18T14:48:05.000Z\",\n        \"deletedAt\": null,\n        \"customerId\": 69589,\n        \"AccountId\": 12724,\n        \"customer\": {\n            \"id\": 69589,\n            \"phone\": \"254723972326\",\n            \"fullName\": \"Anonymous customer\",\n            \"customertoken\": null,\n            \"email\": \"user@exampel.com\",\n            \"createdAt\": \"2018-12-13T07:52:00.000Z\",\n            \"updatedAt\": \"2018-12-13T07:52:00.000Z\",\n            \"deletedAt\": null,\n            \"AccountId\": 12724\n        },\n        \"business_number\": \"637747\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "`POST /charge` endpoint requiring encrypted payload",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4eebf4a6-d21b-41f8-a4d3-f09589630645",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d637f60c-c2db-4cec-93bb-c8350587cd6f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "list banks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-banks.js?json=1",
+					"protocol": "https",
+					"host": [
+						"ravesandboxapi",
+						"flutterwave",
+						"com"
+					],
+					"path": [
+						"flwv3-pug",
+						"getpaidx",
+						"api",
+						"flwpbf-banks.js"
+					],
+					"query": [
+						{
+							"key": "json",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list banks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-banks.js?json=1",
+							"protocol": "https",
+							"host": [
+								"ravesandboxapi",
+								"flutterwave",
+								"com"
+							],
+							"path": [
+								"flwv3-pug",
+								"getpaidx",
+								"api",
+								"flwpbf-banks.js"
+							],
+							"query": [
+								{
+									"key": "json",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, v3-xapp-id, flw-auth-token, mra-auth-token"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT, POST, GET, DELETE, OPTIONS"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "903"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"387-lXb2gzlvEf/3FcGQTQ1dMw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:39:27 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"bankname\": \"ACCESS BANK NIGERIA\",\n        \"bankcode\": \"044\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"ECOBANK NIGERIA LIMITED\",\n        \"bankcode\": \"050\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"UNITED BANK FOR AFRICA PLC\",\n        \"bankcode\": \"033\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"FIRST BANK PLC\",\n        \"bankcode\": \"011\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"GTBANK PLC\",\n        \"bankcode\": \"058\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"STERLING BANK PLC\",\n        \"bankcode\": \"232\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"ZENITH BANK PLC\",\n        \"bankcode\": \"057\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"FIRST CITY MONUMENT BANK PLC\",\n        \"bankcode\": \"214\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"SKYE BANK PLC\",\n        \"bankcode\": \"076\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"FSDH Merchant Bank Limited\",\n        \"bankcode\": \"601\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"UNITY BANK PLC\",\n        \"bankcode\": \"215\",\n        \"internetbanking\": false\n    },\n    {\n        \"bankname\": \"Providus Bank\",\n        \"bankcode\": \"101\",\n        \"internetbanking\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "charge card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"PBFPubKey\": \"FLWPUBK-7adb6177bd71dd43c2efa3f1229e3b7f-X\",\n  \"client\": \"VodhvFFsni0CBeieHPq9HTuG5lbNPgmD5rbEw6Uxb0TD9eD9B3VM5uZ1B5lC3thQMbPypNBCAYxaW2W21VnGuznMPf1G1digW0sHjuO6BGLGbzkwv12rmgNelv19ECSaKfyJmWOSPBvQifHMXZz2M35WuZpE2oD78Be54Xz7vUy3b6MkxrFc+d5gTnuiluBcSDSmnpj/d1ovlo5bix3PeuMUtIYzGFE/RK/EcIYyfYnpL26VFT1aEn5d/iOPyHecqFYVhCMwzV0E6j0uBtT/DMWg+Bi4O1VHej2EBxxKcmwu9rTYvsFf81AtOKZazJEKOea9Xn7mx0J/QpcP2kEf3asWrUqNUgvacl8y8IyaS4jGtU7fCcrIreHttSekpT/16rc45sC428zQy6OfSLoJDA4D2Ww+TEYnMWRNhzuBDHJ9wJTfHmgQcipiD/r7cQyLAzyllfhXsHWFIv3R+ECgrrvxpYMe2lVQ5d+DdTO2pC1MyhkOscNBp7dUwoEGfU7nxY/UGoRWV5WSAg9nFYELS2F4gfvWVkbP07Q+ap11GYUbuZFTMmfULbK/3j//q+9eElWS+E2m6mY4upgehIat8qIGsvGLKR3kagL4wQPZlBMD/S8eiQ8sUD+ngFS8T0XfZUXC5m6IMQdZ7Bfz0mAT2w==\",\n  \"alg\": \"3DES-24\"\n}"
+				},
+				"url": {
+					"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/charge",
+					"protocol": "https",
+					"host": [
+						"ravesandboxapi",
+						"flutterwave",
+						"com"
+					],
+					"path": [
+						"flwv3-pug",
+						"getpaidx",
+						"api",
+						"charge"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "charge card Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"PBFPubKey\": \"FLWPUBK-7adb6177bd71dd43c2efa3f1229e3b7f-X\",\n  \"client\": \"VodhvFFsni0CBeieHPq9HTuG5lbNPgmD5rbEw6Uxb0TD9eD9B3VM5uZ1B5lC3thQMbPypNBCAYxaW2W21VnGuznMPf1G1digW0sHjuO6BGLGbzkwv12rmgNelv19ECSaKfyJmWOSPBvQifHMXZz2M35WuZpE2oD78Be54Xz7vUy3b6MkxrFc+d5gTnuiluBcSDSmnpj/d1ovlo5bix3PeuMUtIYzGFE/RK/EcIYyfYnpL26VFT1aEn5d/iOPyHecqFYVhCMwzV0E6j0uBtT/DMWg+Bi4O1VHej2EBxxKcmwu9rTYvsFf81AtOKZazJEKOea9Xn7mx0J/QpcP2kEf3asWrUqNUgvacl8y8IyaS4jGtU7fCcrIreHttSekpT/16rc45sC428zQy6OfSLoJDA4D2Ww+TEYnMWRNhzuBDHJ9wJTfHmgQcipiD/r7cQyLAzyllfhXsHWFIv3R+ECgrrvxpYMe2lVQ5d+DdTO2pC1MyhkOscNBp7dUwoEGfU7nxY/UGoRWV5WSAg9nFYELS2F4gfvWVkbP07Q+ap11GYUbuZFTMmfULbK/3j//q+9eElWS+E2m6mY4upgehIat8qIGsvGLKR3kagL4wQPZlBMD/S8eiQ8sUD+ngFS8T0XfZUXC5m6IMQdZ7Bfz0mAT2w==\",\n  \"alg\": \"3DES-24\"\n}"
+						},
+						"url": {
+							"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/charge",
+							"protocol": "https",
+							"host": [
+								"ravesandboxapi",
+								"flutterwave",
+								"com"
+							],
+							"path": [
+								"flwv3-pug",
+								"getpaidx",
+								"api",
+								"charge"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, v3-xapp-id, flw-auth-token, mra-auth-token"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT, POST, GET, DELETE, OPTIONS"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1443"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"5a3-KNvgXzy1ktuu6OMyhsSf6Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:43:03 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"V-COMP\",\n    \"data\": {\n        \"id\": 363129,\n        \"txRef\": \"MC-1520443531487\",\n        \"orderRef\": \"URF_1545144181760_3722635\",\n        \"flwRef\": \"FLW-MOCK-e4b0053849b6b98289a4be0a37a75d81\",\n        \"redirectUrl\": \"https://rave-webhook.herokuapp.com/receivepayment\",\n        \"device_fingerprint\": \"69e6b7f0b72037aa8428b70fbe03986c\",\n        \"settlement_token\": null,\n        \"cycle\": \"one-time\",\n        \"amount\": 100,\n        \"charged_amount\": 100,\n        \"appfee\": 1.5,\n        \"merchantfee\": 0,\n        \"merchantbearsfee\": 1,\n        \"chargeResponseCode\": \"02\",\n        \"raveRef\": \"RV31545144180729FEB64F39F3\",\n        \"chargeResponseMessage\": \"Please enter the OTP sent to your mobile number 080****** and email te**@rave**.com\",\n        \"authModelUsed\": \"PIN\",\n        \"currency\": \"NGN\",\n        \"IP\": \"::ffff:10.45.92.31\",\n        \"narration\": \"CARD Transaction \",\n        \"status\": \"success-pending-validation\",\n        \"modalauditid\": \"4a5b443b3d728d3928be22e23eaf3d02\",\n        \"vbvrespmessage\": \"Approved. Successful\",\n        \"authurl\": \"N/A\",\n        \"vbvrespcode\": \"00\",\n        \"acctvalrespmsg\": null,\n        \"acctvalrespcode\": null,\n        \"paymentType\": \"card\",\n        \"paymentPlan\": null,\n        \"paymentPage\": null,\n        \"paymentId\": \"878\",\n        \"fraud_status\": \"ok\",\n        \"charge_type\": \"normal\",\n        \"is_live\": 0,\n        \"createdAt\": \"2018-12-18T14:43:01.000Z\",\n        \"updatedAt\": \"2018-12-18T14:43:02.000Z\",\n        \"deletedAt\": null,\n        \"customerId\": 17573,\n        \"AccountId\": 134,\n        \"customer\": {\n            \"id\": 17573,\n            \"phone\": \"09026420185\",\n            \"fullName\": \"temi desola\",\n            \"customertoken\": null,\n            \"email\": \"desola.ade1@gmail.com\",\n            \"createdAt\": \"2018-02-27T09:55:51.000Z\",\n            \"updatedAt\": \"2018-02-27T09:55:51.000Z\",\n            \"deletedAt\": null,\n            \"AccountId\": 134\n        },\n        \"customercandosubsequentnoauth\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "verify payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"PBFPubKey\": \"FLWPUBK-7adb6177bd71dd43c2efa3f1229e3b7f-X\",\n  \"client\": \"VodhvFFsni0CBeieHPq9HTuG5lbNPgmD5rbEw6Uxb0TD9eD9B3VM5uZ1B5lC3thQMbPypNBCAYxaW2W21VnGuznMPf1G1digW0sHjuO6BGLGbzkwv12rmgNelv19ECSaKfyJmWOSPBvQifHMXZz2M35WuZpE2oD78Be54Xz7vUy3b6MkxrFc+d5gTnuiluBcSDSmnpj/d1ovlo5bix3PeuMUtIYzGFE/RK/EcIYyfYnpL26VFT1aEn5d/iOPyHecqFYVhCMwzV0E6j0uBtT/DMWg+Bi4O1VHej2EBxxKcmwu9rTYvsFf81AtOKZazJEKOea9Xn7mx0J/QpcP2kEf3asWrUqNUgvacl8y8IyaS4jGtU7fCcrIreHttSekpT/16rc45sC428zQy6OfSLoJDA4D2Ww+TEYnMWRNhzuBDHJ9wJTfHmgQcipiD/r7cQyLAzyllfhXsHWFIv3R+ECgrrvxpYMe2lVQ5d+DdTO2pC1MyhkOscNBp7dUwoEGfU7nxY/UGoRWV5WSAg9nFYELS2F4gfvWVkbP07Q+ap11GYUbuZFTMmfULbK/3j//q+9eElWS+E2m6mY4upgehIat8qIGsvGLKR3kagL4wQPZlBMD/S8eiQ8sUD+ngFS8T0XfZUXC5m6IMQdZ7Bfz0mAT2w==\",\n  \"alg\": \"3DES-24\"\n}"
+				},
+				"url": {
+					"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/charge",
+					"protocol": "https",
+					"host": [
+						"ravesandboxapi",
+						"flutterwave",
+						"com"
+					],
+					"path": [
+						"flwv3-pug",
+						"getpaidx",
+						"api",
+						"charge"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "verify payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"txref\":\"MC-1520443531487\",\"SECKEY\":\"FLWSECK-e6db11d1f8a6208de8cb2f94e293450e-X\"}"
+						},
+						"url": {
+							"raw": "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/v2/verify",
+							"protocol": "https",
+							"host": [
+								"ravesandboxapi",
+								"flutterwave",
+								"com"
+							],
+							"path": [
+								"flwv3-pug",
+								"getpaidx",
+								"api",
+								"v2",
+								"verify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, v3-xapp-id, flw-auth-token, mra-auth-token"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT, POST, GET, DELETE, OPTIONS"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1934"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"78e-tkITjtqWiJ/R7E0Hnv3ODQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:43:40 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Tx Fetched\",\n    \"data\": {\n        \"txid\": 335063,\n        \"txref\": \"MC-1520443531487\",\n        \"flwref\": \"FLW-MOCK-7c54b0572f73d7b9f20e273f02be19d1\",\n        \"devicefingerprint\": \"69e6b7f0b72037aa8428b70fbe03986c\",\n        \"cycle\": \"one-time\",\n        \"amount\": 100,\n        \"currency\": \"NGN\",\n        \"chargedamount\": 100,\n        \"appfee\": 1.5,\n        \"merchantfee\": 0,\n        \"merchantbearsfee\": 1,\n        \"chargecode\": \"00\",\n        \"chargemessage\": \"Please enter the OTP sent to your mobile number 080****** and email te**@rave**.com\",\n        \"authmodel\": \"PIN\",\n        \"ip\": \"::ffff:10.35.182.116\",\n        \"narration\": \"CARD Transaction \",\n        \"status\": \"successful\",\n        \"vbvcode\": \"00\",\n        \"vbvmessage\": \"successful\",\n        \"authurl\": \"N/A\",\n        \"acctcode\": null,\n        \"acctmessage\": null,\n        \"paymenttype\": \"card\",\n        \"paymentid\": \"878\",\n        \"fraudstatus\": \"ok\",\n        \"chargetype\": \"normal\",\n        \"createdday\": 1,\n        \"createddayname\": \"MONDAY\",\n        \"createdweek\": 48,\n        \"createdmonth\": 10,\n        \"createdmonthname\": \"NOVEMBER\",\n        \"createdquarter\": 4,\n        \"createdyear\": 2018,\n        \"createdyearisleap\": false,\n        \"createddayispublicholiday\": 0,\n        \"createdhour\": 5,\n        \"createdminute\": 16,\n        \"createdpmam\": \"am\",\n        \"created\": \"2018-11-26T05:16:17.000Z\",\n        \"customerid\": 17573,\n        \"custphone\": \"09026420185\",\n        \"custnetworkprovider\": \"AIRTEL\",\n        \"custname\": \"temi desola\",\n        \"custemail\": \"desola.ade1@gmail.com\",\n        \"custemailprovider\": \"GMAIL\",\n        \"custcreated\": \"2018-02-27T09:55:51.000Z\",\n        \"accountid\": 134,\n        \"acctbusinessname\": \"Synergy Group\",\n        \"acctcontactperson\": \"Desola Ade\",\n        \"acctcountry\": \"US\",\n        \"acctbearsfeeattransactiontime\": 1,\n        \"acctparent\": 1,\n        \"acctvpcmerchant\": \"N/A\",\n        \"acctalias\": \"temi\",\n        \"acctisliveapproved\": 0,\n        \"orderref\": \"URF_1543209377017_7370335\",\n        \"paymentplan\": null,\n        \"paymentpage\": null,\n        \"raveref\": \"RV31543209375982F0F7DE29D6\",\n        \"amountsettledforthistransaction\": 98.5,\n        \"card\": {\n            \"expirymonth\": \"09\",\n            \"expiryyear\": \"19\",\n            \"cardBIN\": \"539983\",\n            \"last4digits\": \"8381\",\n            \"brand\": \"GUARANTY TRUST BANK DEBITSTANDARD\",\n            \"card_tokens\": [\n                {\n                    \"embedtoken\": \"flw-t1nf-f22c700a552802803e89732bdf808b33-m03k\",\n                    \"shortcode\": \"e0371\",\n                    \"expiry\": \"9999999999999\"\n                }\n            ],\n            \"type\": \"MASTERCARD\",\n            \"life_time_token\": \"flw-t1nf-f22c700a552802803e89732bdf808b33-m03k\"\n        },\n        \"meta\": []\n    }\n}"
+				}
+			]
+		}
+	]
+}

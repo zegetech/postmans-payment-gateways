@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "a10a1c8a-082d-4db5-9a3b-384dc22f9295",
+		"name": "Authorize.net",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "chargeCredit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"createTransactionRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"refId\": \"123456\",\n        \"transactionRequest\": {\n            \"transactionType\": \"authCaptureTransaction\",\n            \"amount\": \"5\",\n            \"payment\": {\n                \"creditCard\": {\n                    \"cardNumber\": \"5424000000000015\",\n                    \"expirationDate\": \"2020-12\",\n                    \"cardCode\": \"999\"\n                }\n            },\n            \"lineItems\": {\n                \"lineItem\": {\n                    \"itemId\": \"1\",\n                    \"name\": \"vase\",\n                    \"description\": \"Cannes logo\",\n                    \"quantity\": \"18\",\n                    \"unitPrice\": \"45.00\"\n                }\n            },\n            \"tax\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"duty\": {\n                \"amount\": \"8.55\",\n                \"name\": \"duty name\",\n                \"description\": \"duty description\"\n            },\n            \"shipping\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"poNumber\": \"456654\",\n            \"customer\": {\n                \"id\": \"99999456654\"\n            },\n            \"billTo\": {\n                \"firstName\": \"Ellen\",\n                \"lastName\": \"Johnson\",\n                \"company\": \"Souveniropolis\",\n                \"address\": \"14 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"shipTo\": {\n                \"firstName\": \"China\",\n                \"lastName\": \"Bayles\",\n                \"company\": \"Thyme for Tea\",\n                \"address\": \"12 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"customerIP\": \"192.168.1.1\",\n            \"transactionSettings\": {\n                \"setting\": {\n                    \"settingName\": \"testRequest\",\n                    \"settingValue\": \"false\"\n                }\n            },\n            \"userFields\": {\n                \"userField\": [\n                    {\n                        \"name\": \"MerchantDefinedFieldName1\",\n                        \"value\": \"MerchantDefinedFieldValue1\"\n                    },\n                    {\n                        \"name\": \"favorite_color\",\n                        \"value\": \"blue\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "{{root}}",
+					"host": [
+						"{{root}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 chargeCredit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createTransactionRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"refId\": \"123456\",\n        \"transactionRequest\": {\n            \"transactionType\": \"authCaptureTransaction\",\n            \"amount\": \"5\",\n            \"payment\": {\n                \"creditCard\": {\n                    \"cardNumber\": \"5424000000000015\",\n                    \"expirationDate\": \"2020-12\",\n                    \"cardCode\": \"999\"\n                }\n            },\n            \"lineItems\": {\n                \"lineItem\": {\n                    \"itemId\": \"1\",\n                    \"name\": \"vase\",\n                    \"description\": \"Cannes logo\",\n                    \"quantity\": \"18\",\n                    \"unitPrice\": \"45.00\"\n                }\n            },\n            \"tax\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"duty\": {\n                \"amount\": \"8.55\",\n                \"name\": \"duty name\",\n                \"description\": \"duty description\"\n            },\n            \"shipping\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"poNumber\": \"456654\",\n            \"customer\": {\n                \"id\": \"99999456654\"\n            },\n            \"billTo\": {\n                \"firstName\": \"Ellen\",\n                \"lastName\": \"Johnson\",\n                \"company\": \"Souveniropolis\",\n                \"address\": \"14 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"shipTo\": {\n                \"firstName\": \"China\",\n                \"lastName\": \"Bayles\",\n                \"company\": \"Thyme for Tea\",\n                \"address\": \"12 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"customerIP\": \"192.168.1.1\",\n            \"transactionSettings\": {\n                \"setting\": {\n                    \"settingName\": \"testRequest\",\n                    \"settingValue\": \"false\"\n                }\n            },\n            \"userFields\": {\n                \"userField\": [\n                    {\n                        \"name\": \"MerchantDefinedFieldName1\",\n                        \"value\": \"MerchantDefinedFieldValue1\"\n                    },\n                    {\n                        \"name\": \"favorite_color\",\n                        \"value\": \"blue\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "{{root}}",
+							"host": [
+								"{{root}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-OPNET-Transaction-Trace",
+							"value": "a2_eef80680-d54e-48c6-a213-80692cd5d8c7-7676-8745535"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with,cache-control,content-type,origin,method,SOAPAction"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT,OPTIONS,POST,GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Cnection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Length",
+							"value": "656"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 07:37:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transactionResponse\": {\n        \"responseCode\": \"1\",\n        \"authCode\": \"55H002\",\n        \"avsResultCode\": \"Y\",\n        \"cvvResultCode\": \"P\",\n        \"cavvResultCode\": \"2\",\n        \"transId\": \"60113889144\",\n        \"refTransID\": \"\",\n        \"transHash\": \"26EF8E1066996D2C0CEFF70711547168\",\n        \"testRequest\": \"0\",\n        \"accountNumber\": \"XXXX0015\",\n        \"accountType\": \"MasterCard\",\n        \"messages\": [\n            {\n                \"code\": \"1\",\n                \"description\": \"This transaction has been approved.\"\n            }\n        ],\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ],\n        \"transHashSha2\": \"\",\n        \"SupplementalDataQualificationIndicator\": 0\n    },\n    \"refId\": \"123456\",\n    \"messages\": {\n        \"resultCode\": \"Ok\",\n        \"message\": [\n            {\n                \"code\": \"I00001\",\n                \"text\": \"Successful.\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "refund",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"createTransactionRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"refId\": \"123456\",\n        \"transactionRequest\": {\n            \"transactionType\": \"refundTransaction\",\n            \"amount\": \"5.00\",\n            \"payment\": {\n                \"creditCard\": {\n                    \"cardNumber\": \"0015\",\n                    \"expirationDate\": \"XXXX\"\n                }\n            },\n            \"refTransId\": \"1234567890\"\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "{{root}}",
+					"host": [
+						"{{root}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "refund",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createTransactionRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"refId\": \"123456\",\n        \"transactionRequest\": {\n            \"transactionType\": \"refundTransaction\",\n            \"amount\": \"5.00\",\n            \"payment\": {\n                \"creditCard\": {\n                    \"cardNumber\": \"0015\",\n                    \"expirationDate\": \"XXXX\"\n                }\n            },\n            \"refTransId\": \"1234567890\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "{{root}}",
+							"host": [
+								"{{root}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-OPNET-Transaction-Trace",
+							"value": "a2_5ed1139b-1533-463c-811d-a5ed796d44e7-11076-8747151"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with,cache-control,content-type,origin,method,SOAPAction"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT,OPTIONS,POST,GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Cnection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Length",
+							"value": "579"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 08:00:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transactionResponse\": {\n        \"responseCode\": \"3\",\n        \"authCode\": \"\",\n        \"avsResultCode\": \"P\",\n        \"cvvResultCode\": \"\",\n        \"cavvResultCode\": \"\",\n        \"transId\": \"0\",\n        \"refTransID\": \"1234567890\",\n        \"transHash\": \"9CA50FEA49518B8936FC22757CE5594D\",\n        \"testRequest\": \"0\",\n        \"accountNumber\": \"\",\n        \"accountType\": \"\",\n        \"errors\": [\n            {\n                \"errorCode\": \"54\",\n                \"errorText\": \"The referenced transaction does not meet the criteria for issuing a credit.\"\n            }\n        ],\n        \"shipTo\": {},\n        \"transHashSha2\": \"\",\n        \"SupplementalDataQualificationIndicator\": 0\n    },\n    \"refId\": \"123456\",\n    \"messages\": {\n        \"resultCode\": \"Error\",\n        \"message\": [\n            {\n                \"code\": \"E00027\",\n                \"text\": \"The transaction was unsuccessful.\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "charge bank account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"createTransactionRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"refId\": \"123456\",\n        \"transactionRequest\": {\n            \"transactionType\": \"authCaptureTransaction\",\n            \"amount\": \"5\",\n            \"payment\": {\n                \"bankAccount\": {\n                    \"accountType\": \"checking\",\n                    \"routingNumber\": \"121042882\",\n                    \"accountNumber\": \"123456789\",\n                    \"nameOnAccount\": \"John Doe\"\n                }\n            },\n            \"lineItems\": {\n                \"lineItem\": {\n                    \"itemId\": \"1\",\n                    \"name\": \"vase\",\n                    \"description\": \"Cannes logo\",\n                    \"quantity\": \"18\",\n                    \"unitPrice\": \"45.00\"\n                }\n            },\n            \"tax\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"duty\": {\n                \"amount\": \"8.55\",\n                \"name\": \"duty name\",\n                \"description\": \"duty description\"\n            },\n            \"shipping\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"poNumber\": \"456654\",\n            \"billTo\": {\n                \"firstName\": \"Ellen\",\n                \"lastName\": \"Johnson\",\n                \"company\": \"Souveniropolis\",\n                \"address\": \"14 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"shipTo\": {\n                \"firstName\": \"China\",\n                \"lastName\": \"Bayles\",\n                \"company\": \"Thyme for Tea\",\n                \"address\": \"12 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"customerIP\": \"192.168.1.1\"\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "{{root}}",
+					"host": [
+						"{{root}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Echarge bank account",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createTransactionRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"refId\": \"123456\",\n        \"transactionRequest\": {\n            \"transactionType\": \"authCaptureTransaction\",\n            \"amount\": \"5\",\n            \"payment\": {\n                \"bankAccount\": {\n                    \"accountType\": \"checking\",\n                    \"routingNumber\": \"121042882\",\n                    \"accountNumber\": \"123456789\",\n                    \"nameOnAccount\": \"John Doe\"\n                }\n            },\n            \"lineItems\": {\n                \"lineItem\": {\n                    \"itemId\": \"1\",\n                    \"name\": \"vase\",\n                    \"description\": \"Cannes logo\",\n                    \"quantity\": \"18\",\n                    \"unitPrice\": \"45.00\"\n                }\n            },\n            \"tax\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"duty\": {\n                \"amount\": \"8.55\",\n                \"name\": \"duty name\",\n                \"description\": \"duty description\"\n            },\n            \"shipping\": {\n                \"amount\": \"4.26\",\n                \"name\": \"level2 tax name\",\n                \"description\": \"level2 tax\"\n            },\n            \"poNumber\": \"456654\",\n            \"billTo\": {\n                \"firstName\": \"Ellen\",\n                \"lastName\": \"Johnson\",\n                \"company\": \"Souveniropolis\",\n                \"address\": \"14 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"shipTo\": {\n                \"firstName\": \"China\",\n                \"lastName\": \"Bayles\",\n                \"company\": \"Thyme for Tea\",\n                \"address\": \"12 Main Street\",\n                \"city\": \"Pecan Springs\",\n                \"state\": \"TX\",\n                \"zip\": \"44628\",\n                \"country\": \"USA\"\n            },\n            \"customerIP\": \"192.168.1.1\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "{{root}}",
+							"host": [
+								"{{root}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-OPNET-Transaction-Trace",
+							"value": "a2_eef80680-d54e-48c6-a213-80692cd5d8c7-7676-8779245"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with,cache-control,content-type,origin,method,SOAPAction"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT,OPTIONS,POST,GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Cnection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Length",
+							"value": "585"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 08:09:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transactionResponse\": {\n        \"responseCode\": \"3\",\n        \"authCode\": \"\",\n        \"avsResultCode\": \"P\",\n        \"cvvResultCode\": \"\",\n        \"cavvResultCode\": \"\",\n        \"transId\": \"0\",\n        \"refTransID\": \"\",\n        \"transHash\": \"9CA50FEA49518B8936FC22757CE5594D\",\n        \"testRequest\": \"0\",\n        \"accountNumber\": \"XXXX6789\",\n        \"accountType\": \"eCheck\",\n        \"errors\": [\n            {\n                \"errorCode\": \"101\",\n                \"errorText\": \"The given name on the account and/or the account type does not match the actual account.\"\n            }\n        ],\n        \"transHashSha2\": \"\",\n        \"SupplementalDataQualificationIndicator\": 0\n    },\n    \"refId\": \"123456\",\n    \"messages\": {\n        \"resultCode\": \"Error\",\n        \"message\": [\n            {\n                \"code\": \"E00027\",\n                \"text\": \"The transaction was unsuccessful.\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create customer profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"createCustomerProfileRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"profile\": {\n            \"merchantCustomerId\": \"Merchant_Customer_ID\",\n            \"description\": \"Profile description here\",\n            \"email\": \"customer-profile-email@here.com\",\n            \"paymentProfiles\": {\n                \"customerType\": \"individual\",\n                \"payment\": {\n                    \"creditCard\": {\n                        \"cardNumber\": \"4111111111111111\",\n                        \"expirationDate\": \"2020-12\"\n                    }\n                }\n            }\n        },\n        \"validationMode\": \"testMode\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{root}}",
+					"host": [
+						"{{root}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create customer profile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createCustomerProfileRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"profile\": {\n            \"merchantCustomerId\": \"Merchant_Customer_ID\",\n            \"description\": \"Profile description here\",\n            \"email\": \"customer-profile-email@here.com\",\n            \"paymentProfiles\": {\n                \"customerType\": \"individual\",\n                \"payment\": {\n                    \"creditCard\": {\n                        \"cardNumber\": \"4111111111111111\",\n                        \"expirationDate\": \"2020-12\"\n                    }\n                }\n            }\n        },\n        \"validationMode\": \"testMode\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{root}}",
+							"host": [
+								"{{root}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-OPNET-Transaction-Trace",
+							"value": "a2_eef80680-d54e-48c6-a213-80692cd5d8c7-7676-8796844"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with,cache-control,content-type,origin,method,SOAPAction"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT,OPTIONS,POST,GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Cnection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Length",
+							"value": "548"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 08:26:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"customerProfileId\": \"1916871747\",\n    \"customerPaymentProfileIdList\": [\n        \"1830133001\"\n    ],\n    \"customerShippingAddressIdList\": [],\n    \"validationDirectResponseList\": [\n        \"1,1,1,(TESTMODE) This transaction has been approved.,000000,P,0,none,Test transaction for ValidateCustomerPaymentProfile.,1.00,CC,auth_only,Merchant_Customer_ID,,,,,,,,,,,customer-profile-email@here.com,,,,,,,,,0.00,0.00,0.00,FALSE,none,AFACE7CC69556144736A28BDA6D4FAE7,,,,,,,,,,,,,XXXX1111,Visa,,,,,,,,,,,,,,,,,\"\n    ],\n    \"messages\": {\n        \"resultCode\": \"Ok\",\n        \"message\": [\n            {\n                \"code\": \"I00001\",\n                \"text\": \"Successful.\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get customer profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"getCustomerProfileRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"customerProfileId\": \"1916871747\",\n        \"includeIssuerInfo\": \"true\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{root}}",
+					"host": [
+						"{{root}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get customer profile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"getCustomerProfileRequest\": {\n        \"merchantAuthentication\": {\n            \"name\": \"{{login_id}}\",\n            \"transactionKey\": \"{{txn_key}}\"\n        },\n        \"customerProfileId\": \"1916871747\",\n        \"includeIssuerInfo\": \"true\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{root}}",
+							"host": [
+								"{{root}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-OPNET-Transaction-Trace",
+							"value": "a2_eef80680-d54e-48c6-a213-80692cd5d8c7-7676-8802116"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with,cache-control,content-type,origin,method,SOAPAction"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT,OPTIONS,POST,GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Cnection",
+							"value": "close"
+						},
+						{
+							"key": "Content-Length",
+							"value": "489"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 08:30:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"profile\": {\n        \"paymentProfiles\": [\n            {\n                \"customerPaymentProfileId\": \"1830133001\",\n                \"payment\": {\n                    \"creditCard\": {\n                        \"cardNumber\": \"XXXX1111\",\n                        \"expirationDate\": \"XXXX\",\n                        \"cardType\": \"Visa\",\n                        \"issuerNumber\": \"411111\"\n                    }\n                },\n                \"customerType\": \"individual\"\n            }\n        ],\n        \"profileType\": \"regular\",\n        \"customerProfileId\": \"1916871747\",\n        \"merchantCustomerId\": \"Merchant_Customer_ID\",\n        \"description\": \"Profile description here\",\n        \"email\": \"customer-profile-email@here.com\"\n    },\n    \"messages\": {\n        \"resultCode\": \"Ok\",\n        \"message\": [\n            {\n                \"code\": \"I00001\",\n                \"text\": \"Successful.\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8b782add-f9fa-4bbb-939e-9476b94b2bd2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "68a8e1e5-d016-4d71-8c2d-c4be27152386",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "fb3c2ff7-a9e3-4fc7-8c50-16ed08d2de66",
+			"key": "login_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "c0f33e88-7fc6-4832-9387-95b29f6a50f9",
+			"key": "txn_key",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3c3b43bc-1250-49e4-863a-ba4bf463e149",
+			"key": "root",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

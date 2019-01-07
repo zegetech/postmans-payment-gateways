@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "da60b145-f1c5-43f2-8b87-da14da2200da",
+		"name": "PayPal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.sandbox.paypal.com/v1/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "Returns a bearer token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Invoices",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.sandbox.paypal.com/v1/invoicing/invoices",
+					"protocol": "https",
+					"host": [
+						"api",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"invoicing",
+						"invoices"
+					]
+				},
+				"description": "Returns invoices for a merchant"
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"intent\": \"sale\",\n  \"payer\": {\n    \"payment_method\": \"paypal\"\n  },\n  \"transactions\": [\n    {\n      \"amount\": {\n        \"total\": \"30.11\",\n        \"currency\": \"USD\",\n        \"details\": {\n          \"subtotal\": \"30.00\",\n          \"tax\": \"0.07\",\n          \"shipping\": \"0.03\",\n          \"handling_fee\": \"1.00\",\n          \"shipping_discount\": \"-1.00\",\n          \"insurance\": \"0.01\"\n        }\n      },\n      \"description\": \"The payment transaction description.\",\n      \"custom\": \"EBAY_EMS_90048630024435\",\n      \"invoice_number\": \"48787589673\",\n      \"payment_options\": {\n        \"allowed_payment_method\": \"INSTANT_FUNDING_SOURCE\"\n      },\n      \"soft_descriptor\": \"ECHI5786786\",\n      \"item_list\": {\n        \"items\": [\n          {\n            \"name\": \"hat\",\n            \"description\": \"Brown hat.\",\n            \"quantity\": \"5\",\n            \"price\": \"3\",\n            \"tax\": \"0.01\",\n            \"sku\": \"1\",\n            \"currency\": \"USD\"\n          },\n          {\n            \"name\": \"handbag\",\n            \"description\": \"Black handbag.\",\n            \"quantity\": \"1\",\n            \"price\": \"15\",\n            \"tax\": \"0.02\",\n            \"sku\": \"product34\",\n            \"currency\": \"USD\"\n          }\n        ],\n        \"shipping_address\": {\n          \"recipient_name\": \"Brian Robinson\",\n          \"line1\": \"4th Floor\",\n          \"line2\": \"Unit #34\",\n          \"city\": \"San Jose\",\n          \"country_code\": \"US\",\n          \"postal_code\": \"95131\",\n          \"phone\": \"011862212345678\",\n          \"state\": \"CA\"\n        }\n      }\n    }\n  ],\n  \"note_to_payer\": \"Contact us for any questions on your order.\",\n  \"redirect_urls\": {\n    \"return_url\": \"https://example.com/return\",\n    \"cancel_url\": \"https://example.com/cancel\"\n  }\n}"
+				},
+				"url": {
+					"raw": "https://api.sandbox.paypal.com/v1/payments/payment",
+					"protocol": "https",
+					"host": [
+						"api",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"payment"
+					]
+				},
+				"description": "Creates a payment transactions/sale"
+			},
+			"response": []
+		},
+		{
+			"name": "List Payments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "A21AAHUIhdduTyEy_ltXesR-RMlTCEQ1YTUg5squs0E4A1Y6KlVJbljF90Gw27vrHal_ZPp_Y_SZnMVJzG0xUsli1flTGcxPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.sandbox.paypal.com/v1/payments/payment?count=10&start_index=0&sort_by=create_time&sort_order=desc",
+					"protocol": "https",
+					"host": [
+						"api",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"payment"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "10"
+						},
+						{
+							"key": "start_index",
+							"value": "0"
+						},
+						{
+							"key": "sort_by",
+							"value": "create_time"
+						},
+						{
+							"key": "sort_order",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "Get a list of payments"
+			},
+			"response": []
+		},
+		{
+			"name": "Execute a payment accepted by a customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "A21AAHUIhdduTyEy_ltXesR-RMlTCEQ1YTUg5squs0E4A1Y6KlVJbljF90Gw27vrHal_ZPp_Y_SZnMVJzG0xUsli1flTGcxPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.sandbox.paypal.com/v1/payments/payment/PAY-68R7660985461581LLQMNOCQ/execute",
+					"protocol": "https",
+					"host": [
+						"api",
+						"sandbox",
+						"paypal",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"payment",
+						"PAY-68R7660985461581LLQMNOCQ",
+						"execute"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "b1dd356a-c90c-4bd5-86e1-9787c7d5b17d",
+		"name": "beyonic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list all endpoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://app.beyonic.com/api",
+					"protocol": "https",
+					"host": [
+						"app",
+						"beyonic",
+						"com"
+					],
+					"path": [
+						"api"
+					]
+				},
+				"description": "Get a hash of api endpoints"
+			},
+			"response": [
+				{
+					"name": "https://app.beyonic.com/api",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://app.beyonic.com/api",
+							"protocol": "https",
+							"host": [
+								"app",
+								"beyonic",
+								"com"
+							],
+							"path": [
+								"api"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:50:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Language, Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "N/A"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com *.jsdelivr.net beyonic.atlassian.net 'unsafe-inline' 'unsafe-eval' *.google-analytics.com *.newrelic.com bam.nr-data.net *.googleadservices.com *.intercom.io *.intercomcdn.com *.google.com *.gstatic.com *.transifex.com beyonic-prod-static.s3.amazonaws.com *.inspectlet.com; style-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com 'unsafe-inline' cdn.jsdelivr.net *.intercom.io *.intercomcdn.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com; default-src 'self'; frame-src 'self' beyonic.atlassian.net www.google.com www.transifex.com; upgrade-insecure-requests; img-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com secure.gravatar.com data: blob: *.openstreetmap.org *.google-analytics.com cdn.datatables.net *.intercom.io *.intercomcdn.com *.intercomassets.com *.inspectlet.com *.google.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com beyonic-prod-media.s3.amazonaws.com; media-src 'self' *.intercomcdn.com beyonic-prod-media.s3.amazonaws.com; connect-src 'self' *.intercom.io wss://*.intercom.io *.intercomcdn.com *.getsentry.com *.inspectlet.com wss://*.inspectlet.com *.transifex.com *.inspectlet.com; font-src 'self' *.bootstrapcdn.com data: *.cloudflare.com *.intercom.io *.intercomcdn.com *.gstatic.com; report-uri /reports/csp-report/"
+						},
+						{
+							"key": "Expires",
+							"value": "Tue, 18 Dec 2018 14:50:02 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Tue, 18 Dec 2018 14:50:02 GMT"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate, max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 google"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"payments\": \"https://app.beyonic.com/api/v4/payments\",\n    \"webhooks\": \"https://app.beyonic.com/api/v4/webhooks\",\n    \"collections\": \"https://app.beyonic.com/api/v4/collections\",\n    \"collectionrequests\": \"https://app.beyonic.com/api/v4/collectionrequests\",\n    \"contacts\": \"https://app.beyonic.com/api/v4/contacts\",\n    \"accounts\": \"https://app.beyonic.com/api/v4/accounts\",\n    \"events\": \"https://app.beyonic.com/api/v4/events\",\n    \"transactions\": \"https://app.beyonic.com/api/v4/transactions\"\n}"
+				}
+			]
+		},
+		{
+			"name": "list of all collections",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://app.beyonic.com/api/collectionrequests",
+					"protocol": "https",
+					"host": [
+						"app",
+						"beyonic",
+						"com"
+					],
+					"path": [
+						"api",
+						"collectionrequests"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list collections",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://app.beyonic.com/api/webhooks",
+							"protocol": "https",
+							"host": [
+								"app",
+								"beyonic",
+								"com"
+							],
+							"path": [
+								"api",
+								"webhooks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:51:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Language, Cookie"
+						},
+						{
+							"key": "Server",
+							"value": "N/A"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com *.jsdelivr.net beyonic.atlassian.net 'unsafe-inline' 'unsafe-eval' *.google-analytics.com *.newrelic.com bam.nr-data.net *.googleadservices.com *.intercom.io *.intercomcdn.com *.google.com *.gstatic.com *.transifex.com beyonic-prod-static.s3.amazonaws.com *.inspectlet.com; style-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com 'unsafe-inline' cdn.jsdelivr.net *.intercom.io *.intercomcdn.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com; default-src 'self'; frame-src 'self' beyonic.atlassian.net www.google.com www.transifex.com; upgrade-insecure-requests; img-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com secure.gravatar.com data: blob: *.openstreetmap.org *.google-analytics.com cdn.datatables.net *.intercom.io *.intercomcdn.com *.intercomassets.com *.inspectlet.com *.google.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com beyonic-prod-media.s3.amazonaws.com; media-src 'self' *.intercomcdn.com beyonic-prod-media.s3.amazonaws.com; connect-src 'self' *.intercom.io wss://*.intercom.io *.intercomcdn.com *.getsentry.com *.inspectlet.com wss://*.inspectlet.com *.transifex.com *.inspectlet.com; font-src 'self' *.bootstrapcdn.com data: *.cloudflare.com *.intercom.io *.intercomcdn.com *.gstatic.com; report-uri /reports/csp-report/"
+						},
+						{
+							"key": "Expires",
+							"value": "Tue, 18 Dec 2018 14:51:19 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Tue, 18 Dec 2018 14:51:19 GMT"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate, max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 google"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2210,\n            \"created\": \"2018-12-06T08:27:43Z\",\n            \"updated\": \"2018-12-06T08:27:43Z\",\n            \"event\": \"payment.status.changed\",\n            \"target\": \"https://requestbin.fullcontact.com/18kqejf1?skip-cert-verify\",\n            \"user\": 13741\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "collection request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phonenumber\": \"+80000000004\",\n\t\"first_name\": \"Ngari\",\n\t\"amount\": \"50\",\n\t\"currency\": \"BXC\"\n}"
+				},
+				"url": {
+					"raw": "https://app.beyonic.com/api/collectionrequests",
+					"protocol": "https",
+					"host": [
+						"app",
+						"beyonic",
+						"com"
+					],
+					"path": [
+						"api",
+						"collectionrequests"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "collection request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phonenumber\": \"+80000000004\",\n\t\"first_name\": \"Ngari\",\n\t\"amount\": \"50\",\n\t\"currency\": \"BXC\"\n}"
+						},
+						"url": {
+							"raw": "https://app.beyonic.com/api/collectionrequests",
+							"protocol": "https",
+							"host": [
+								"app",
+								"beyonic",
+								"com"
+							],
+							"path": [
+								"api",
+								"collectionrequests"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:53:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "N/A"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com *.jsdelivr.net beyonic.atlassian.net 'unsafe-inline' 'unsafe-eval' *.google-analytics.com *.newrelic.com bam.nr-data.net *.googleadservices.com *.intercom.io *.intercomcdn.com *.google.com *.gstatic.com *.transifex.com beyonic-prod-static.s3.amazonaws.com *.inspectlet.com; style-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com 'unsafe-inline' cdn.jsdelivr.net *.intercom.io *.intercomcdn.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com; default-src 'self'; frame-src 'self' beyonic.atlassian.net www.google.com www.transifex.com; upgrade-insecure-requests; img-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com secure.gravatar.com data: blob: *.openstreetmap.org *.google-analytics.com cdn.datatables.net *.intercom.io *.intercomcdn.com *.intercomassets.com *.inspectlet.com *.google.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com beyonic-prod-media.s3.amazonaws.com; media-src 'self' *.intercomcdn.com beyonic-prod-media.s3.amazonaws.com; connect-src 'self' *.intercom.io wss://*.intercom.io *.intercomcdn.com *.getsentry.com *.inspectlet.com wss://*.inspectlet.com *.transifex.com *.inspectlet.com; font-src 'self' *.bootstrapcdn.com data: *.cloudflare.com *.intercom.io *.intercomcdn.com *.gstatic.com; report-uri /reports/csp-report/"
+						},
+						{
+							"key": "Expires",
+							"value": "Tue, 18 Dec 2018 14:53:29 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Language, Cookie"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Tue, 18 Dec 2018 14:53:29 GMT"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate, max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 google"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"currency\": [\n        \"Object with code=BXC does not exist.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "List all collection requests",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://app.beyonic.com/api/collectionrequests",
+					"protocol": "https",
+					"host": [
+						"app",
+						"beyonic",
+						"com"
+					],
+					"path": [
+						"api",
+						"collectionrequests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make payment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phonenumber\": \"+80000000002\",\n\t\"first_name\": \"Ngari\",\n\t\"amount\": \"50\",\n\t\"currency\": \"BXC\"\n}"
+				},
+				"url": {
+					"raw": "https://app.beyonic.com/api/payments",
+					"protocol": "https",
+					"host": [
+						"app",
+						"beyonic",
+						"com"
+					],
+					"path": [
+						"api",
+						"payments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Make payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 66703c6be6aace0264b752ff705c061fc2d20f52",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phonenumber\": \"+80000000001\",\n\t\"first_name\": \"Ngari\",\n\t\"amount\": \"50\",\n\t\"currency\": \"KES\",\n\t\"description\": \"test payment\",\n\t\"payment_type\": \"airtime\",\n\t\"callback_url\": \"https://requestbin.fullcontact.com/18kqejf1?skip-cert-verify\"\n\t\n}"
+						},
+						"url": {
+							"raw": "https://app.beyonic.com/api/payments",
+							"protocol": "https",
+							"host": [
+								"app",
+								"beyonic",
+								"com"
+							],
+							"path": [
+								"api",
+								"payments"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Dec 2018 14:54:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "N/A"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "script-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com *.jsdelivr.net beyonic.atlassian.net 'unsafe-inline' 'unsafe-eval' *.google-analytics.com *.newrelic.com bam.nr-data.net *.googleadservices.com *.intercom.io *.intercomcdn.com *.google.com *.gstatic.com *.transifex.com beyonic-prod-static.s3.amazonaws.com *.inspectlet.com; style-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com 'unsafe-inline' cdn.jsdelivr.net *.intercom.io *.intercomcdn.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com; default-src 'self'; frame-src 'self' beyonic.atlassian.net www.google.com www.transifex.com; upgrade-insecure-requests; img-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com secure.gravatar.com data: blob: *.openstreetmap.org *.google-analytics.com cdn.datatables.net *.intercom.io *.intercomcdn.com *.intercomassets.com *.inspectlet.com *.google.com cdn.transifex.com beyonic-prod-static.s3.amazonaws.com beyonic-prod-media.s3.amazonaws.com; media-src 'self' *.intercomcdn.com beyonic-prod-media.s3.amazonaws.com; connect-src 'self' *.intercom.io wss://*.intercom.io *.intercomcdn.com *.getsentry.com *.inspectlet.com wss://*.inspectlet.com *.transifex.com *.inspectlet.com; font-src 'self' *.bootstrapcdn.com data: *.cloudflare.com *.intercom.io *.intercomcdn.com *.gstatic.com; report-uri /reports/csp-report/"
+						},
+						{
+							"key": "Expires",
+							"value": "Tue, 18 Dec 2018 14:54:24 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Language, Cookie"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Tue, 18 Dec 2018 14:54:24 GMT"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate, max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 google"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2128383,\n    \"organization\": 11387,\n    \"amount\": \"50.0000\",\n    \"currency\": \"KES\",\n    \"account\": 2943239,\n    \"payment_type\": \"airtime\",\n    \"metadata\": {},\n    \"description\": \"test payment\",\n    \"phone_nos\": [\n        \"+80000000001\"\n    ],\n    \"state\": \"new\",\n    \"remote_transaction_id\": null,\n    \"last_error\": \"\",\n    \"rejected_reason\": null,\n    \"rejected_by\": null,\n    \"rejected_time\": null,\n    \"cancelled_reason\": null,\n    \"cancelled_by\": null,\n    \"cancelled_time\": null,\n    \"created\": \"2018-12-18T14:54:23.056566Z\",\n    \"author\": 13741,\n    \"modified\": \"2018-12-18T14:54:23.056606Z\",\n    \"updated_by\": 13741,\n    \"start_date\": \"2018-12-18T14:54:23.049568Z\",\n    \"transactions\": [],\n    \"send_sms_message\": false,\n    \"charged_fee\": 0\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "66703c6be6aace0264b752ff705c061fc2d20f52",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "00973465-3bd6-4e60-8b52-6e01a6dac4b4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "20c9e7aa-118a-40a6-b1cf-68acf3a12f70",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

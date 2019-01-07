@@ -1,0 +1,878 @@
+{
+	"info": {
+		"_postman_id": "66b67c42-ef8e-48ed-931f-ebfe9b042920",
+		"name": "Africas Talking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "notifications",
+			"item": [],
+			"description": "The Payment API sends a notification when a specific event happens. To receive these notifications you need to setup a callback URL depending on the type of notification."
+		},
+		{
+			"name": "Mobile",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"phoneNumber\":\"+254718751741\",\n\t\"currencyCode\":\"KES\",\n\t\"amount\":300.0\n\n\t\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/mobile/checkout/request",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"mobile",
+								"checkout",
+								"request"
+							]
+						},
+						"description": "Mobile Checkout APIs allow you to initiate Customer to Business (C2B) payments on a mobile subscriber's device. This allows for a smoother checkout experience, since the client will no longer need to remember the amount or an account number to complete the transaction."
+					},
+					"response": []
+				},
+				{
+					"name": "B2C",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"recipients\":[{\"name\":\"Melvin\",\"phoneNumber\":\"+254718751741\",\"currencyCode\":\"KES\",\"amount\":1000.0, \"metadata\":{\"transacton\":\"payment\"}}]\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/mobile/b2c/request",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"mobile",
+								"b2c",
+								"request"
+							]
+						},
+						"description": "Mobile Business To Consumer (B2C) APIs allow you to send payments to mobile subscribers from your Payment Wallet"
+					},
+					"response": []
+				},
+				{
+					"name": "C2B",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"provider\":\"Athena\",\n\t\"clientAccount\":\"Melvin\",\n\t\"productName\":\"meltestig\",\n\t\"phoneNumber\":\"+254718751741\",\n\t\"value\":\"KES 7000.00\",\n\t\"providerMetadata\":{\"name\":\"melo\",\"country\":\"kenya\"}\n\t\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/payments/mobile-c2b",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"payments",
+								"mobile-c2b"
+							]
+						},
+						"description": "Mobile Consumer To Business (C2B) functionality allows your application to receive payments that are initiated by a mobile subscriber."
+					},
+					"response": []
+				},
+				{
+					"name": "B2B",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"provider\":\"Athena\",\n\t\"transferType\":\"BusinessBuyGoods\",\n\t\"currencyCode\":\"KES\",\n\t\"amount\":\"3000.0\",\n\t\"destinationChannel\":\"876543\",\n\t\"metadata\":{\n\t\t\"shopname\":\"this is how we do\",\n\t\t\"itemname\":\"this is why\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/mobile/b2b/request",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"mobile",
+								"b2b",
+								"request"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "sandox",
+									"disabled": true
+								},
+								{
+									"key": "apiKey",
+									"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Mobile Business To Business (B2B) APIs allow you to send payments to businesses e.g banks from your Payment Wallet"
+					},
+					"response": []
+				}
+			],
+			"description": "For mobile payments"
+		},
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "bank checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"bankAccount\":{\n\t\t\"accountName\":\"Test Bank Account\",\n\t\t\"accountNumber\":\"123456789\",\n\t\t\"bankCode\":234001\n\t},\n\t\"amount\":10000.50,\n\t\"currencyCode\":\"NGN\",\n\t\"narration\":\"Being payment for book purchase\"\n\t\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/bank/checkout/charge",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"bank",
+								"checkout",
+								"charge"
+							]
+						},
+						"description": "Bank checkout APIs allow your application to collect money into your payment wallet by initiating transactions that deduct money from a customers bank account.\n\nPlease note: These APIs are currently only available in Nigeria.\n\nTwo endpoints are required in order for your application to complete a bank checkout request. These are:\n\nCharge Request: Your application can initiate a transaction by sending a bank checkout charge request to our APIs. Once the request is accepted, the bank will send a One Time Password (OTP) to the user (either over SMS or on a device issued by the bank). Your application should provide the user a way to enter the OTP sent to them by the bank and finally send that to us using a bank checkout validate request to validate the transaction.\nValidate Request: Your application can validate a transaction by sending us a bank checkout validate request. This request should send an OTP collected from a user and If the OTP matches with what we receive from the bank, the transaction will be completed successfully and the funds will be credited to your application's payment wallet."
+					},
+					"response": []
+				},
+				{
+					"name": "Bank checkout Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"sandbox\",\n    \"transactionId\": \"ATPid_832c0be4cffa924310a47f2d19b84009\",\n    \"otp\": \"1234\"\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/bank/checkout/validate?apiKey",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"bank",
+								"checkout",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": null
+								}
+							]
+						},
+						"description": "Bank checkout validation APIs allow your application to validate bank checkout charge requests."
+					},
+					"response": []
+				},
+				{
+					"name": "Bank transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"sandbox\",\n\t\"productName\": \"meltesting\",\n\t\"recipients\": [{\n\t\t\"bankAccount\": {\n\t\t\t\"accountName\": \"John Doe\",\n\t\t\t\"accountNumber\": \"1234567890\",\n\t\t\t\"bankCode\": 234004\n\t\t},\n\t\t\"currencyCode\": \"NGN\",\n\t\t\"amount\": 50000.00,\n\t\t\"narration\": \"May Salary Payment\",\n\t\t\"metadata\": {\n\t\t\t\"description\": \"May Salary\",\n\t\t\t\"employeeId\": \"123\"\n\t\t}\n\t\t}, {\n\t\t\"bankAccount\": {\n\t\t\t\"accountName\": \"Jane Doe\",\n\t\t\t\"accountNumber\": \"1234567891\",\n\t\t\t\"bankCode\": 234004\n\t\t},\n\t\t\"currencyCode\": \"NGN\",\n\t\t\"amount\": 50000.00,\n\t\t\"narration\": \"May Salary Payment\",\n\t\t\"metadata\": {\n\t\t\t\"description\": \"May Salary\",\n\t\t\t\"employeeId\": \"124\"\n\t\t}\n\t}]\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/bank/transfer",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"bank",
+								"transfer"
+							]
+						},
+						"description": "Bank Tranfer APIs allow you to move money from your Payment Wallet to bank accounts."
+					},
+					"response": []
+				},
+				{
+					"name": "bank checkout Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"bankAccount\":{\n\t\t\"accountName\":\"Test Bank Account\",\n\t\t\"accountNumber\":\"123456789\",\n\t\t\"bankCode\":234001\n\t},\n\t\"amount\":10000.50,\n\t\"currencyCode\":\"NGN\",\n\t\"narration\":\"Being payment for book purchase\"\n\t\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/bank/checkout/charge",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"bank",
+								"checkout",
+								"charge"
+							]
+						},
+						"description": "Bank checkout APIs allow your application to collect money into your payment wallet by initiating transactions that deduct money from a customers bank account.\n\nPlease note: These APIs are currently only available in Nigeria.\n\nTwo endpoints are required in order for your application to complete a bank checkout request. These are:\n\nCharge Request: Your application can initiate a transaction by sending a bank checkout charge request to our APIs. Once the request is accepted, the bank will send a One Time Password (OTP) to the user (either over SMS or on a device issued by the bank). Your application should provide the user a way to enter the OTP sent to them by the bank and finally send that to us using a bank checkout validate request to validate the transaction.\nValidate Request: Your application can validate a transaction by sending us a bank checkout validate request. This request should send an OTP collected from a user and If the OTP matches with what we receive from the bank, the transaction will be completed successfully and the funds will be credited to your application's payment wallet."
+					},
+					"response": []
+				}
+			],
+			"description": "Bank checkout APIs allow your application to collect money into your payment wallet by initiating transactions that deduct money from a customers bank account."
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"sandbox\",\n\t\"productName\": \"meltesting\",\n\t\"paymentCard\": {\n\t\t\"number\": \"5196010124859499\",\n\t\t\"cvvNumber\":164,\n\t\t\"expiryMonth\": 6,\n\t\t\"expiryYear\": 2020,\n\t\t\"countryCode\": \"NG\",\n\t\t\"authToken\": \"12345\"\n\t},\n\t\"currencyCode\": \"NGN\",\n\t\"amount\": 500.5,\n\t\"narration\": \"Airtime Purchase\",\n\t\"metadata\": {\n\t\t\"requestId\": \"12345\",\n\t\t\"applicationId\": \"AppId123\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/card/checkout/charge",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"card",
+								"checkout",
+								"charge"
+							]
+						},
+						"description": "Initiate a card checkout charge "
+					},
+					"response": []
+				},
+				{
+					"name": "Card checkout validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\": \"sandbox\",\n  \"transactionId\": \"ATPid_589eb950529529dd8d1c95324cba88ff\",\n  \"otp\": \"1234\"\n}"
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/card/checkout/validate",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"card",
+								"checkout",
+								"validate"
+							]
+						},
+						"description": "Initiate a card checkout charge "
+					},
+					"response": []
+				}
+			],
+			"description": "Card Checkout APIs allow your application to collect money into your Payment Wallet by initiating transactions that deduct money from a customers Debit or Credit Card.\nThese APIs are currently only available in Nigeria on MasterCard and Verve cards.\n\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "eaea6532-5700-4bd7-b28c-3f5b05dc42c4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1d599f1-9677-4e2e-9a49-ceedbc83b53e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Query",
+			"item": [
+				{
+					"name": "find transaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "transactionId",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/query/transaction/find?username=sandbox&transactionId=ATPid_743dbe0fc77e4e6b6ec2dc789c5ae956",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"query",
+								"transaction",
+								"find"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "sandbox"
+								},
+								{
+									"key": "transactionId",
+									"value": "ATPid_743dbe0fc77e4e6b6ec2dc789c5ae956"
+								}
+							]
+						},
+						"description": "Find a particular payment transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "fetch product transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "sandbox",
+								"type": "text"
+							},
+							{
+								"key": "transactionId",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/query/transaction/fetch?username=sandbox&productName=meltesting&pageNumber=3&count=12",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"query",
+								"transaction",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "sandbox"
+								},
+								{
+									"key": "productName",
+									"value": "meltesting"
+								},
+								{
+									"key": "pageNumber",
+									"value": "3"
+								},
+								{
+									"key": "count",
+									"value": "12"
+								}
+							]
+						},
+						"description": "Fetch transactions of a particular payment product"
+					},
+					"response": []
+				},
+				{
+					"name": "fetch wallet transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"type": "text",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7"
+							},
+							{
+								"key": "username",
+								"type": "text",
+								"value": "sandbox"
+							},
+							{
+								"key": "transactionId",
+								"type": "text",
+								"value": "1",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/query/wallet/fetch?username=sandbox&pageNumber=1&count=10",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"query",
+								"wallet",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "sandbox"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "10"
+								}
+							]
+						},
+						"description": "fetch wallet transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "wallet balance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"type": "text",
+								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7"
+							},
+							{
+								"key": "username",
+								"type": "text",
+								"value": "sandbox"
+							},
+							{
+								"key": "transactionId",
+								"type": "text",
+								"value": "1",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://payments.sandbox.africastalking.com/query/wallet/balance?username=sandbox",
+							"protocol": "https",
+							"host": [
+								"payments",
+								"sandbox",
+								"africastalking",
+								"com"
+							],
+							"path": [
+								"query",
+								"wallet",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "sandbox"
+								}
+							]
+						},
+						"description": "fetch wallet transactions"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wallet transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "apiKey",
+						"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "sandbox",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"sandbox\",\n    \"productName\": \"meltesting\",\n    \"targetProductCode\":3538,\n    \"currencyCode\": \"KES\",\n    \"amount\": 20000,\n    \"metadata\": {\n        \"description\" : \"May Rent\"\n    }\n}"
+				},
+				"url": {
+					"raw": "https://payments.sandbox.africastalking.com/transfer/wallet",
+					"protocol": "https",
+					"host": [
+						"payments",
+						"sandbox",
+						"africastalking",
+						"com"
+					],
+					"path": [
+						"transfer",
+						"wallet"
+					]
+				},
+				"description": "Wallet transfer APIs allow you to transfer money from one Payment Product to another Payment Product hosted on Africa's Talking by making a HTTP POST request to one of the following endpoints:"
+			},
+			"response": []
+		},
+		{
+			"name": "Top up stash",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "apiKey",
+						"type": "text",
+						"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7"
+					},
+					{
+						"key": "username",
+						"type": "text",
+						"value": "sandbox"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"sandbox\",\n    \"productName\": \"meltesting\",\n    \"currencyCode\": \"KES\",\n    \"amount\": 1500,\n    \"metadata\": {\n       \"description\": \"May Charges\"\n    }\n}"
+				},
+				"url": {
+					"raw": "https://payments.sandbox.africastalking.com/topup/stash",
+					"protocol": "https",
+					"host": [
+						"payments",
+						"sandbox",
+						"africastalking",
+						"com"
+					],
+					"path": [
+						"topup",
+						"stash"
+					]
+				},
+				"description": "Topup stash APIs allow you to move money from a Payment Product to an Africa's Talking application stash. An application stash is the wallet that funds your service usage expences."
+			},
+			"response": []
+		}
+	]
+}

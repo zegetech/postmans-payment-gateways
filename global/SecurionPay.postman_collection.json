@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "6a00abdd-e7f8-4496-be57-212ea35b67ee",
+		"name": "SecurionPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "charge card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 10,\n\t\"currency\": \"USD\",\n\t\"card\": {\n\t\t\"number\": \"4242424242424242\",\n\t\t\"expMonth\": \"04\",\n\t\t\"expYear\": \"19\",\n\t\t\"cvc\": \"123\"\n\t},\n\t\"description\": \"test charge\"\n}"
+				},
+				"url": {
+					"raw": "{{root}}/charges",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"charges"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 charge card",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": 10,\n\t\"currency\": \"USD\",\n\t\"card\": {\n\t\t\"number\": \"4242424242424242\",\n\t\t\"expMonth\": \"04\",\n\t\t\"expYear\": \"19\",\n\t\t\"cvc\": \"123\"\n\t},\n\t\"description\": \"test charge\"\n}"
+						},
+						"url": {
+							"raw": "{{root}}/charges",
+							"host": [
+								"{{root}}"
+							],
+							"path": [
+								"charges"
+							]
+						}
+					},
+					"status": "200",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 12:59:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48ba0c745f112cb4-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"char_c1g9ewRuKRTrsRoSlVev6tMn\",\n    \"created\": 1545224390,\n    \"objectType\": \"charge\",\n    \"amount\": 10,\n    \"amountRefunded\": 0,\n    \"currency\": \"USD\",\n    \"description\": \"test charge\",\n    \"card\": {\n        \"id\": \"card_FgEmdZwy9nUzATpjfHlnkfCk\",\n        \"created\": 1545224390,\n        \"objectType\": \"card\",\n        \"first6\": \"424242\",\n        \"last4\": \"4242\",\n        \"fingerprint\": \"s4diYX4PmlDp0gHG\",\n        \"expMonth\": \"04\",\n        \"expYear\": \"2019\",\n        \"brand\": \"Visa\",\n        \"type\": \"Credit Card\",\n        \"country\": \"CH\"\n    },\n    \"captured\": true,\n    \"refunded\": false,\n    \"disputed\": false,\n    \"fraudDetails\": {\n        \"status\": \"in_progress\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "retrieve charge",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{root}}/charges/char_c1g9ewRuKRTrsRoSlVev6tMn",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"charges",
+						"char_c1g9ewRuKRTrsRoSlVev6tMn"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 charge details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{root}}/charges/char_c1g9ewRuKRTrsRoSlVev6tMn",
+							"host": [
+								"{{root}}"
+							],
+							"path": [
+								"charges",
+								"char_c1g9ewRuKRTrsRoSlVev6tMn"
+							]
+						}
+					},
+					"status": "200",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 13:04:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48ba130d28142cb4-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"char_c1g9ewRuKRTrsRoSlVev6tMn\",\n    \"created\": 1545224390,\n    \"objectType\": \"charge\",\n    \"amount\": 10,\n    \"amountRefunded\": 0,\n    \"currency\": \"USD\",\n    \"description\": \"test charge\",\n    \"card\": {\n        \"id\": \"card_FgEmdZwy9nUzATpjfHlnkfCk\",\n        \"created\": 1545224390,\n        \"objectType\": \"card\",\n        \"first6\": \"424242\",\n        \"last4\": \"4242\",\n        \"fingerprint\": \"s4diYX4PmlDp0gHG\",\n        \"expMonth\": \"04\",\n        \"expYear\": \"2019\",\n        \"brand\": \"Visa\",\n        \"type\": \"Credit Card\",\n        \"country\": \"CH\"\n    },\n    \"captured\": true,\n    \"refunded\": false,\n    \"disputed\": false,\n    \"fraudDetails\": {\n        \"status\": \"safe\",\n        \"score\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "list charges",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{root}}/charges",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"charges"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 list charges",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{root}}/charges",
+							"host": [
+								"{{root}}"
+							],
+							"path": [
+								"charges"
+							]
+						}
+					},
+					"status": "200",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 13:08:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48ba189b5f972cb4-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"list\": [\n        {\n            \"id\": \"char_c1g9ewRuKRTrsRoSlVev6tMn\",\n            \"created\": 1545224390,\n            \"objectType\": \"charge\",\n            \"amount\": 10,\n            \"amountRefunded\": 0,\n            \"currency\": \"USD\",\n            \"description\": \"test charge\",\n            \"card\": {\n                \"id\": \"card_FgEmdZwy9nUzATpjfHlnkfCk\",\n                \"created\": 1545224390,\n                \"objectType\": \"card\",\n                \"first6\": \"424242\",\n                \"last4\": \"4242\",\n                \"fingerprint\": \"s4diYX4PmlDp0gHG\",\n                \"expMonth\": \"04\",\n                \"expYear\": \"2019\",\n                \"brand\": \"Visa\",\n                \"type\": \"Credit Card\",\n                \"country\": \"CH\"\n            },\n            \"captured\": true,\n            \"refunded\": false,\n            \"disputed\": false,\n            \"fraudDetails\": {\n                \"status\": \"safe\",\n                \"score\": 0\n            }\n        },\n        {\n            \"id\": \"char_MVo6fRgWxgA1eH4DSDUGlSwU\",\n            \"created\": 1545224241,\n            \"objectType\": \"charge\",\n            \"amount\": 10,\n            \"amountRefunded\": 0,\n            \"currency\": \"USD\",\n            \"description\": \"test charge\",\n            \"card\": {\n                \"id\": \"card_FphQkvq4fjx1DNAjAraDlmta\",\n                \"created\": 1545224241,\n                \"objectType\": \"card\",\n                \"first6\": \"451212\",\n                \"last4\": \"1234\",\n                \"fingerprint\": \"ion9LfVSpG8bV10b\",\n                \"expMonth\": \"04\",\n                \"expYear\": \"2019\",\n                \"brand\": \"Visa\",\n                \"type\": \"Credit Card\",\n                \"country\": \"CH\"\n            },\n            \"captured\": false,\n            \"refunded\": false,\n            \"disputed\": false,\n            \"failureCode\": \"invalid_number\",\n            \"failureMessage\": \"Your request was in test mode, but used a non test card. For a list of valid test cards, visit our doc site.\"\n        }\n    ],\n    \"hasMore\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "create customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"customer@email.com\",\n\t\"card\": {\n\t\t\"number\": \"4242424242424242\",\n\t\t\"expMonth\": \"04\",\n\t\t\"expYear\": \"19\",\n\t\t\"cvc\": \"123\"\n\t},\n\t\"description\": \"optional description of customer\",\n\t\"metadata\": {\n\t\t\"required\": \"no\",\n\t\t\"for\": \"demo\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{root}}/customers",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"customers"
+					]
+				},
+				"description": "Associate a customer with card details for later payments"
+			},
+			"response": [
+				{
+					"name": "200 new customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"customer@email.com\",\n\t\"card\": {\n\t\t\"number\": \"4242424242424242\",\n\t\t\"expMonth\": \"04\",\n\t\t\"expYear\": \"19\",\n\t\t\"cvc\": \"123\"\n\t},\n\t\"description\": \"optional description of customer\",\n\t\"metadata\": {\n\t\t\"required\": \"no\",\n\t\t\"for\": \"demo\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{root}}/customers",
+							"host": [
+								"{{root}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"status": "200",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 13:15:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48ba23def9b42cb4-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"cust_wzvpVmwc2iECl4mqDIgBC3jd\",\n    \"created\": 1545225349,\n    \"objectType\": \"customer\",\n    \"email\": \"customer@email.com\",\n    \"description\": \"optional description of customer\",\n    \"defaultCardId\": \"card_mPjTnHR6Vp5tsyiw75q3Vzy2\",\n    \"cards\": [\n        {\n            \"id\": \"card_mPjTnHR6Vp5tsyiw75q3Vzy2\",\n            \"created\": 1545225349,\n            \"objectType\": \"card\",\n            \"first6\": \"424242\",\n            \"last4\": \"4242\",\n            \"fingerprint\": \"s4diYX4PmlDp0gHG\",\n            \"expMonth\": \"04\",\n            \"expYear\": \"2019\",\n            \"customerId\": \"cust_wzvpVmwc2iECl4mqDIgBC3jd\",\n            \"brand\": \"Visa\",\n            \"type\": \"Credit Card\",\n            \"country\": \"CH\"\n        }\n    ],\n    \"metadata\": {\n        \"for\": \"demo\",\n        \"required\": \"no\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"card\": {\n\t\"number\": \"5555555555554444\",\n\t\"expMonth\": \"04\",\n\t\"expYear\": \"2019\",\n\t\"cvc\": \"123\",\n\t\"cardholderName\": \"So Named\",\n\t\"addressLine1\": \"1st here avenue\",\n\t\"addressCity\": \"Ccity\"\n}\n}"
+				},
+				"url": {
+					"raw": "{{root}}/customers/cust_wzvpVmwc2iECl4mqDIgBC3jd",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"customers",
+						"cust_wzvpVmwc2iECl4mqDIgBC3jd"
+					]
+				},
+				"description": "associate a new card with a customer"
+			},
+			"response": [
+				{
+					"name": "200 create card",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"card\": {\n\t\"number\": \"5555555555554444\",\n\t\"expMonth\": \"04\",\n\t\"expYear\": \"2019\",\n\t\"cvc\": \"123\",\n\t\"cardholderName\": \"So Named\",\n\t\"addressLine1\": \"1st here avenue\",\n\t\"addressCity\": \"Ccity\"\n}\n}"
+						},
+						"url": {
+							"raw": "{{root}}/customers/cust_wzvpVmwc2iECl4mqDIgBC3jd",
+							"host": [
+								"{{root}}"
+							],
+							"path": [
+								"customers",
+								"cust_wzvpVmwc2iECl4mqDIgBC3jd"
+							]
+						}
+					},
+					"status": "200",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 13:25:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48ba327a0b612ca2-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"cust_wzvpVmwc2iECl4mqDIgBC3jd\",\n    \"created\": 1545225349,\n    \"objectType\": \"customer\",\n    \"email\": \"customer@email.com\",\n    \"description\": \"optional description of customer\",\n    \"defaultCardId\": \"card_V2gv2OuSdeWxkJY1WNsm56D9\",\n    \"cards\": [\n        {\n            \"id\": \"card_mPjTnHR6Vp5tsyiw75q3Vzy2\",\n            \"created\": 1545225349,\n            \"objectType\": \"card\",\n            \"first6\": \"424242\",\n            \"last4\": \"4242\",\n            \"fingerprint\": \"s4diYX4PmlDp0gHG\",\n            \"expMonth\": \"04\",\n            \"expYear\": \"2019\",\n            \"customerId\": \"cust_wzvpVmwc2iECl4mqDIgBC3jd\",\n            \"brand\": \"Visa\",\n            \"type\": \"Credit Card\",\n            \"country\": \"CH\"\n        },\n        {\n            \"id\": \"card_V2gv2OuSdeWxkJY1WNsm56D9\",\n            \"created\": 1545225947,\n            \"objectType\": \"card\",\n            \"first6\": \"555555\",\n            \"last4\": \"4444\",\n            \"fingerprint\": \"RbBO6gHuJ03cjmA0\",\n            \"expMonth\": \"04\",\n            \"expYear\": \"2019\",\n            \"cardholderName\": \"So Named\",\n            \"customerId\": \"cust_wzvpVmwc2iECl4mqDIgBC3jd\",\n            \"brand\": \"MasterCard\",\n            \"type\": \"Credit Card\",\n            \"country\": \"CH\",\n            \"addressLine1\": \"1st here avenue\",\n            \"addressCity\": \"Ccity\"\n        }\n    ],\n    \"metadata\": {\n        \"for\": \"demo\",\n        \"required\": \"no\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Generate card token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"number\": \"6759649826438453\",\n\t\"expMonth\": \"04\",\n\t\"expYear\": \"2019\",\n\t\"cvc\": \"123\",\n\t\"cardholderName\": \"So Named\",\n\t\"addressLine1\": \"1st here avenue\",\n\t\"addressCity\": \"Ccity\"\n}\n"
+				},
+				"url": {
+					"raw": "{{root}}/tokens",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"tokens"
+					]
+				},
+				"description": "tokenize card details for charging or adding a card to a customer"
+			},
+			"response": [
+				{
+					"name": "200 Generate card token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"number\": \"6759649826438453\",\n\t\"expMonth\": \"04\",\n\t\"expYear\": \"2019\",\n\t\"cvc\": \"123\",\n\t\"cardholderName\": \"So Named\",\n\t\"addressLine1\": \"1st here avenue\",\n\t\"addressCity\": \"Ccity\"\n}\n"
+						},
+						"url": {
+							"raw": "{{root}}/tokens",
+							"host": [
+								"{{root}}"
+							],
+							"path": [
+								"tokens"
+							]
+						}
+					},
+					"status": "200",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Dec 2018 13:32:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "48ba3c745a0d2cb4-MBA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"tok_0ivj9cSjKbL8vqDqTuJQ38Ob\",\n    \"created\": 1545226356,\n    \"objectType\": \"token\",\n    \"first6\": \"675964\",\n    \"last4\": \"8453\",\n    \"fingerprint\": \"T5bezej1C2RedliA\",\n    \"expMonth\": \"04\",\n    \"expYear\": \"2019\",\n    \"brand\": \"Maestro\",\n    \"type\": \"Credit Card\",\n    \"country\": \"CH\",\n    \"cardholderName\": \"So Named\",\n    \"addressLine1\": \"1st here avenue\",\n    \"addressCity\": \"Ccity\",\n    \"used\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "charge card with token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 10,\n\t\"currency\": \"USD\",\n\t\"card\": \"tok_0ivj9cSjKbL8vqDqTuJQ38Ob\",\n\t\"description\": \"test charge\"\n}"
+				},
+				"url": {
+					"raw": "{{root}}/charges",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"charges"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "sk_test_nZmFT4rwzBKNqhRUU7TiO395",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d79c2207-a0f8-4330-bc2e-84166e62695d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0df71456-009e-4e08-9825-aaf17c029240",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3b1d6fd4-15b7-4b18-91c8-0159cc9c3e57",
+			"key": "root",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
