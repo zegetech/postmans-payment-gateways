@@ -15,13 +15,15 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic QWEzY0dxRVpWOVo5dDFVSnhTR3BwZUF4WEZrcFFyYUk6cU5BYWs5YXcyVDNtSW1uMg=="
+								"value": "",
+								"disabled": true
 							},
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/x-www-form-urlencoded",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -30,12 +32,14 @@
 								{
 									"key": "username",
 									"value": "0582910862",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "password",
 									"value": "vLcQDQwDYF1hOU9Xiq3O16DGtJgBlIcT",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -52,9 +56,70 @@
 								"v2",
 								"token"
 							]
-						}
+						},
+						"description": "After you generate you API key :key+: you will use this service to enable your application or service (or organization) access the Jenga resources [smart way of saying 'Jenga services'] you have been granted access to"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Your JengaWS Access Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "0582910862",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "ce0NHpa7ZaxmOFkbEbULABpu412fS4NQa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://sandbox.jengahq.io/identity-test/v2/token",
+									"protocol": "https",
+									"host": [
+										"sandbox",
+										"jengahq",
+										"io"
+									],
+									"path": [
+										"identity-test",
+										"v2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 20 Dec 2018 10:29:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"bearer\",\n    \"issued_at\": \"1544530178450\",\n    \"expires_in\": \"3599\",\n    \"access_token\": \"cOmjobRAxH1oSqFuQB1bbdUp546x\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -68,7 +133,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer AtGFwIi6Qtlf72sG62935p4AJNDF"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "signature",
@@ -95,7 +160,8 @@
 								"KE",
 								"0011547896523"
 							]
-						}
+						},
+						"description": "This web service enables an application or service retrieve the current and available balance of an account"
 					},
 					"response": []
 				},
@@ -106,7 +172,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer AtGFwIi6Qtlf72sG62935p4AJNDF"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "signature",
@@ -133,7 +199,8 @@
 								"KE",
 								"0011547896523"
 							]
-						}
+						},
+						"description": "This service will return the last (10) ten transactions of a given account number. Its a super efficient service compared to the fullstatement web service."
 					},
 					"response": []
 				},
@@ -144,11 +211,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer isBZZG53Wm2uQjQ9GZiYWcrY6cHG"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/x-www-form-urlencoded"
 							},
 							{
 								"key": "signature",
@@ -173,7 +240,8 @@
 								"accounts",
 								"fullstatement"
 							]
-						}
+						},
+						"description": "This web service enables the Jengi to retrieve the full set of transactions :page-with-curl+: on a particular account based on a specified date range."
 					},
 					"response": []
 				},
@@ -184,7 +252,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer isBZZG53Wm2uQjQ9GZiYWcrY6cHG"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -213,7 +281,8 @@
 								"accountbalance",
 								"query"
 							]
-						}
+						},
+						"description": "This web service enables an application or service retrieve the opening and closing balance of an account for a given date"
 					},
 					"response": []
 				},
@@ -224,7 +293,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer isBZZG53Wm2uQjQ9GZiYWcrY6cHG"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -255,7 +324,8 @@
 								"KE",
 								"0011547896523"
 							]
-						}
+						},
+						"description": "Get account details"
 					},
 					"response": []
 				},
@@ -266,7 +336,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer AtGFwIi6Qtlf72sG62935p4AJNDF",
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr",
 								"type": "text"
 							},
 							{
@@ -298,7 +368,8 @@
 								"accountname",
 								"lookup"
 							]
-						}
+						},
+						"description": "This web service performs a lookup against the accountId and returns the name of the account holder, together with other info related to the account"
 					},
 					"response": []
 				}
@@ -314,7 +385,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer c0AsmYNjtu9dFLJyT91C3GxKtXog"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -342,7 +413,8 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "Move Funds Within Equity Bank. Across Kenya, Uganda, Tanzania, Rwanda & South Sudan."
 					},
 					"response": []
 				},
@@ -353,7 +425,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 69zW8gayVIBFGJuNxcAvzPeMDPFy"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -381,7 +453,8 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "This enables your application to send money to telco :iphone+: wallets across Kenya, Uganda, Tanzania & Rwanda."
 					},
 					"response": []
 				},
@@ -392,7 +465,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 69zW8gayVIBFGJuNxcAvzPeMDPFy"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -420,35 +493,20 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "The Real Time Gross Settlement (RTGS) web-service enables an application to send money intra-country to other bank accounts."
 					},
 					"response": []
 				},
 				{
 					"name": "Send Money - SWIFT",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ce0NHpa7ZaxmOFkbEbULABpu412fS4NQa",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "0582910862",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
 								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 								"key": "Authorization",
-								"value": "Bearer 69zW8gayVIBFGJuNxcAvzPeMDPFy",
-								"disabled": true
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -478,7 +536,8 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "The swift web-service enables your application to send cross-border remittances"
 					},
 					"response": []
 				},
@@ -517,7 +576,8 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "Send Money To Other Banks Via Electronic Funds Transfer (EFT)"
 					},
 					"response": []
 				},
@@ -528,7 +588,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer  ZhRJ2FxeUgVx8owLkEiafhQyALSq"
+								"value": "Bearer  716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -556,7 +616,8 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "This web service enables an application to send money to a PesaLink participating bank. It is restricted to Kenya."
 					},
 					"response": []
 				},
@@ -567,7 +628,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer NB3EtEuoImkkSP62yxNAXd18He9O"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -595,7 +656,8 @@
 								"v2",
 								"remittance"
 							]
-						}
+						},
+						"description": "This service enables to send money to mobile number via pesalink"
 					},
 					"response": []
 				}
@@ -611,7 +673,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer NB3EtEuoImkkSP62yxNAXd18He9O"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -636,7 +698,8 @@
 								"pesalink",
 								"inquire"
 							]
-						}
+						},
+						"description": "This web service enables an application to send money to a PesaLink participating bank. It is restricted to Kenya."
 					},
 					"response": []
 				}
@@ -652,7 +715,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer yy9FyjzQ5ggGsPbnCVsI10Ici6er"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -681,7 +744,8 @@
 								"v2",
 								"payments"
 							]
-						}
+						},
+						"description": "This API Provides Merchants Capability To Initiate Payments For Goods And Services. The Customer Validates The Payment Request On Their Phone To Complete The Transaction"
 					},
 					"response": []
 				},
@@ -721,7 +785,8 @@
 								"payment",
 								"mpesastkpush"
 							]
-						}
+						},
+						"description": "This API Provides Merchants Capability To Initiate Payments For Goods And Services. The Customer Validates The Payment Request On Their Phone To Complete The Transaction"
 					},
 					"response": []
 				},
@@ -732,7 +797,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -761,7 +826,8 @@
 								"bills",
 								"pay"
 							]
-						}
+						},
+						"description": "This API Provides Partners the Capability To Initiate Utility Bill Payments For Goods And Services"
 					},
 					"response": []
 				},
@@ -772,7 +838,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -801,7 +867,8 @@
 								"tills",
 								"pay"
 							]
-						}
+						},
+						"description": "This API Provides Partners the Capability To Make Payments For Goods And Services"
 					},
 					"response": []
 				},
@@ -812,7 +879,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer NzfgEhHGAd42cR3N3B0KF6uDygow"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -837,7 +904,8 @@
 								"bills",
 								"validation"
 							]
-						}
+						},
+						"description": "This web service enables your application perform a bill validation. This is typically before a payment is made for example before paying a utility bill you would like the payment application to validate it actually exists and its details are correct"
 					},
 					"response": []
 				},
@@ -852,7 +920,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer vVX5VzAujjTRxDo68y1IdEvRYm3B"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "signature",
@@ -877,7 +945,8 @@
 								"payments",
 								"refund"
 							]
-						}
+						},
+						"description": "his web service allows a payment to be voided completely or partially."
 					},
 					"response": []
 				},
@@ -892,7 +961,12 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer FNwhIlnwqP8E5711c1aXQ5N1Xn1G"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
+							},
+							{
+								"key": "signature",
+								"value": "vtU9bsRz0WSBrjLYY4dbqloUd0bk7mE6rYa80jxJls7R++YA5hStZIh8mZkMFwQ4UEfXIwQQES8DpP0H9lhyt62ftLf3i6M4WcI31KV4VK2w2Wqf7ZVouw1pYbitWuMcoEQc0YUHBUPMFVmuO8N82ns72914Oms3iOlxg9/pkC1W/FWCHQAOq8RWNGFpmsufEtEnKUOUKAsj0+yVrJ1fpUEpqG2I5hVipz0/c0RVAhuHnTH+/YY6n7jCraSUMMGSfgUDPwY7WgaVfMVv30UTKsq6a0JEdsvOeUVr4jDao+WLK4W6cv3S2vJSDex5lmnQykFptWeVZn0u0PsPu1aTfw==",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -913,7 +987,8 @@
 								"migs",
 								"payment"
 							]
-						}
+						},
+						"description": "This API provides the capability to do a card payments through MasterCard card services."
 					},
 					"response": []
 				}
@@ -929,7 +1004,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							}
 						],
 						"body": {
@@ -950,7 +1025,8 @@
 								"payments",
 								"692194625798"
 							]
-						}
+						},
+						"description": "The webservice enables an application track the status of a payment that is linked to the Receive Payments - Eazzypay Push web service especially in failure states."
 					},
 					"response": []
 				},
@@ -961,7 +1037,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer t11NgX6GYG4FNtQSdAAIHx1j2MV8"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "signature",
@@ -988,7 +1064,8 @@
 								"details",
 								"689632147856"
 							]
-						}
+						},
+						"description": "This webservice enables an application or service to query a transactions details and status"
 					},
 					"response": []
 				},
@@ -999,7 +1076,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer jii2RbBvj8dAbLCrD1Gbwo6sZXA6"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							}
 						],
 						"body": {
@@ -1029,7 +1106,8 @@
 									"value": "1"
 								}
 							]
-						}
+						},
+						"description": "This web service returns a list of all Eazypay merchants"
 					},
 					"response": []
 				},
@@ -1070,7 +1148,8 @@
 									"value": "6"
 								}
 							]
-						}
+						},
+						"description": "This web service returns a paginated list of all billers"
 					},
 					"response": []
 				}
@@ -1086,7 +1165,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer rD1sle0mnC2zGG9Udma8GXQRMmFt"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -1114,7 +1193,8 @@
 								"v2",
 								"airtime"
 							]
-						}
+						},
+						"description": "This gives an application the ability to purchase airtime from any telco in East and Central Africa."
 					},
 					"response": []
 				}
@@ -1130,7 +1210,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer  EGB8dlqqAQv4EsyTbgtyzvEPwbHB"
+								"value": "Bearer  716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -1174,7 +1254,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eN8AtyKuZGpBS71m01GgNviZzdih"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -1198,7 +1278,8 @@
 								"v2",
 								"foreignexchangerates"
 							]
-						}
+						},
+						"description": "The Foreign Exchange Rates API Provides Easy Access To The Equity Bank Daily Currency Conversion Rate For Major Currencies"
 					},
 					"response": []
 				}
@@ -1214,7 +1295,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer rD1sle0mnC2zGG9Udma8GXQRMmFt"
+								"value": "Bearer 716iTk7PFteWC8GBGXcOG9l2ZkGr"
 							},
 							{
 								"key": "Content-Type",
@@ -1243,7 +1324,8 @@
 								"identity",
 								"verify"
 							]
-						}
+						},
+						"description": "This web service enables your application to query the various registrar of persons in the various countries in East Africa. Currently available for Kenya and Rwanda only."
 					},
 					"response": []
 				}
