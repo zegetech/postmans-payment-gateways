@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "66b67c42-ef8e-48ed-931f-ebfe9b042920",
-		"name": "Africas Talking",
+		"_postman_id": "7e65948d-12d0-44d9-becd-7ea0d64bc1d3",
+		"name": "Africas Talking copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -37,7 +37,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"phoneNumber\":\"+254718751741\",\n\t\"currencyCode\":\"KES\",\n\t\"amount\":300.0\n\n\t\n}"
+							"raw": "{\n\t\"username\": \"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"phoneNumber\":\"+25471234567\",\n\t\"currencyCode\":\"KES\",\n\t\"amount\":300.0\n\n\t\n}"
 						},
 						"url": {
 							"raw": "https://payments.sandbox.africastalking.com/mobile/checkout/request",
@@ -82,7 +82,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\":\"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"recipients\":[{\"name\":\"Melvin\",\"phoneNumber\":\"+254718751741\",\"currencyCode\":\"KES\",\"amount\":1000.0, \"metadata\":{\"transacton\":\"payment\"}}]\n}"
+							"raw": "{\n\t\"username\":\"sandbox\",\n\t\"productName\":\"meltesting\",\n\t\"recipients\":[{\"name\":\"Melvin\",\"phoneNumber\":\"+25471234567\",\"currencyCode\":\"KES\",\"amount\":1000.0, \"metadata\":{\"transacton\":\"payment\"}}]\n}"
 						},
 						"url": {
 							"raw": "https://payments.sandbox.africastalking.com/mobile/b2c/request",
@@ -100,50 +100,6 @@
 							]
 						},
 						"description": "Mobile Business To Consumer (B2C) APIs allow you to send payments to mobile subscribers from your Payment Wallet"
-					},
-					"response": []
-				},
-				{
-					"name": "C2B",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "username",
-								"value": "sandbox",
-								"type": "text"
-							},
-							{
-								"key": "apiKey",
-								"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"provider\":\"Athena\",\n\t\"clientAccount\":\"Melvin\",\n\t\"productName\":\"meltestig\",\n\t\"phoneNumber\":\"+254718751741\",\n\t\"value\":\"KES 7000.00\",\n\t\"providerMetadata\":{\"name\":\"melo\",\"country\":\"kenya\"}\n\t\n}"
-						},
-						"url": {
-							"raw": "https://payments.sandbox.africastalking.com/payments/mobile-c2b",
-							"protocol": "https",
-							"host": [
-								"payments",
-								"sandbox",
-								"africastalking",
-								"com"
-							],
-							"path": [
-								"payments",
-								"mobile-c2b"
-							]
-						},
-						"description": "Mobile Consumer To Business (C2B) functionality allows your application to receive payments that are initiated by a mobile subscriber."
 					},
 					"response": []
 				},
@@ -191,11 +147,6 @@
 								{
 									"key": "",
 									"value": "sandox",
-									"disabled": true
-								},
-								{
-									"key": "apiKey",
-									"value": "1129c6e264d5e9fef2a7b7f9ab6f348ec799216ede2e77668a3997791a316ff7",
 									"disabled": true
 								}
 							]
