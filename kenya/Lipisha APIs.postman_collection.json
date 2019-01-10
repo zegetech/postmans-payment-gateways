@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ac838feb-a6b7-4e7f-9342-1b65c652e6b0",
-		"name": "Lipisha APIs",
+		"_postman_id": "2e593d07-7664-434e-9712-474300960794",
+		"name": "Lipisha APIs copy",
 		"description": "Lipisha a kenyan payment gateway. [link](https://lipisha.com/payments/accounts/index.php/app/launch/features)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -38,66 +38,6 @@
 									"key": "api_signature",
 									"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
 									"type": "text"
-								},
-								{
-									"key": "api_version",
-									"value": "1.3.0",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "api_type",
-									"value": "callback",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction",
-									"value": "EWFAIDZ6M",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_type",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_method",
-									"value": "Deposit",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_status",
-									"value": "Requested",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_date_start",
-									"value": "2013-12-18",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_account_name",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_account_number",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "transaction_reference",
-									"value": "",
-									"type": "text",
-									"disabled": true
 								}
 							]
 						},
@@ -1105,7 +1045,7 @@
 						},
 						{
 							"key": "mobile_number",
-							"value": "0718751741",
+							"value": "0712345678",
 							"type": "text"
 						}
 					]
@@ -1166,7 +1106,7 @@
 						},
 						{
 							"key": "mobile_number",
-							"value": "0718751741",
+							"value": "0712345678",
 							"type": "text"
 						},
 						{
@@ -1214,29 +1154,6 @@
 							"key": "api_key",
 							"value": "30db03e656304de6af665123b1023b1a",
 							"type": "text"
-						},
-						{
-							"key": "api_signature",
-							"value": "sLZH3vBu9G4HZZ3E87zCNgICqjmSOa5lgdnapWdylAKhAT6bGnqGc5xzoTjfXWT5IPNHYLtvcwomwmAjNy4KBrPmOInyNBmsVnjgy8JoWpauVKJMsXaMuoo28E+PYVeoQqvubZeFoTTbJyfRct8+iYLvufpMmlzlK4SxnJKGego=",
-							"type": "text"
-						},
-						{
-							"key": "customer_name",
-							"value": "susan",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "customer_mobile_number",
-							"value": "123456789",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "customer_email",
-							"value": "someone@gmail.com",
-							"type": "text",
-							"disabled": true
 						}
 					]
 				},
