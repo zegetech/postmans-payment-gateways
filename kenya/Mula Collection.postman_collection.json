@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "a5971523-c9be-47a8-b6a2-95565d6dfdb8",
+		"name": "Mula Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch Request details",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYzZTVkMTg5NmE1ZGZhYzZhYjE3N2E2Yzg2NWY5MWMzNmNkYmQ3MDUyZDBiODRhMmJkYWU2Y2I1NTYwMzM3YjYxMTBhMTU4Y2MzZTZkNDY4In0.eyJhdWQiOiI2MDgiLCJqdGkiOiI2M2U1ZDE4OTZhNWRmYWM2YWIxNzdhNmM4NjVmOTFjMzZjZGJkNzA1MmQwYjg0YTJiZGFlNmNiNTU2MDMzN2I2MTEwYTE1OGNjM2U2ZDQ2OCIsImlhdCI6MTU0ODc1MjYxOSwibmJmIjoxNTQ4NzUyNjE5LCJleHAiOjE1NDg3NTI3MzksInN1YiI6IiIsInNjb3BlcyI6W119.ZtBqqRLWWGdb9Sy1Ko_etqIfO68TwBUppN7BL8f3ufGUpQyibeU6PgneD6IpLy-gN5wua_otkUdAFLTxPjJj2BUCZXlKH-qtw-XOyK-T8UUB82OAqoQxeJjbT7CChmVgrRVoicqN8_Ya1yQHVrH7-oFqbb8_Q_rIzOnt04xjzFeD_JoYFnfHaliTsiCd2anhhvjI-OfZjzedI2MB241ZlopLW6thATd7GftaB4FEJqHoZunJr7KOwId5OUyZJGwdDFK-87Cjlo_85eMd7G0FscgEawAEFCVe0LSvC71jYS2I-dBM_K-m2ERdCBKrq9NBcI2yeCe9wjNB3VEssYXQFDL9p4KR5qwvsutNynvpJtO0Hgi4HZ7hpmroRiDBIdO26SCnp2kgz5CoULGINAyoPPA3Yh0OS3m3xpSZ5aXXOtOCKHqxRaHAxIsS6s8rL9wkBi5MmKIuAc_BOpzTYUkQyuttaO0gnhbB01nKCBDdT3z5Nc2KlfbgahDwDvbWIGFBZjX1WyTjEA3DZCT3mFEIkziMKLAfF6JgkCHteypPvzX_fJq_o1wR2lUIMJwQ-tMbHdz5LT3Mnyazr0iZZPdmIXsH79pJTb_0f3uz7dr3eVTNlW7g5Tt_1hPL9mUxkVzUUp56Xmp4o9FMbyUgaxyj2lSDYTVI_oxv5mx_-mlZs9Q",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"merchantTransactionID\":\"DMIlmFrffCfdCvjpDH\"\n}"
+				},
+				"url": {
+					"raw": "https://beep2.cellulant.com:9212/checkout/v2/custom/requests/query-status",
+					"protocol": "https",
+					"host": [
+						"beep2",
+						"cellulant",
+						"com"
+					],
+					"port": "9212",
+					"path": [
+						"checkout",
+						"v2",
+						"custom",
+						"requests",
+						"query-status"
+					]
+				},
+				"description": "Check for the status of a checkout request"
+			},
+			"response": []
+		},
+		{
+			"name": "acknowledge Payments",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk4ODVmOTc2MzUxZjE1OGQ3OTAyNWQ2ZDMyYmEwYWQ1MTM0YWMwOTM1MmJhOTI3MGY4NGEyODQ0N2M3OWMzZTFlMTA4YmVlZTdjYmJhYmI3In0.eyJhdWQiOiI2MDgiLCJqdGkiOiI5ODg1Zjk3NjM1MWYxNThkNzkwMjVkNmQzMmJhMGFkNTEzNGFjMDkzNTJiYTkyNzBmODRhMjg0NDdjNzljM2UxZTEwOGJlZWU3Y2JiYWJiNyIsImlhdCI6MTU0ODc1MTg3NCwibmJmIjoxNTQ4NzUxODc0LCJleHAiOjE1NDg3NTE5OTQsInN1YiI6IiIsInNjb3BlcyI6W119.skrQwBTJ3qgxHgGJYZ7f5U9zAiR920VqHvwUKvgPTPjqxJIq3dWgLCsy6thrXzsnLy_wET6sfaOZ3lv215qETFlW31ub372ycjCle5uTwhqR2gid9FvLGwfltJ1-lMAZCurO_8y20ESew89WhirPfQjkr6c5wXeO-eIS7H1WKZ9OQ0EA_vEFWfTKAXjXj0MJGLv6W9N7UpnP7_0NGlaOSibHEacd-H8a1hak6Gts7QQI9YkncwmQwh7E7metKHfNqdZFn-G3vEqrATqCU6o-1qvxO0mYbpYLtrBTMchuRMYdkjAQ2w8BBqKPUvKrRFEsPGUOukUE5oG8bLuFG2jVKzwTqIfJ57GXgF1q1ggX62hJ-JzfdoYVTKhRC21q_dFmihAMT2L_OHqUzY0sBDJpcrXzEq-6-Zj4yCN2aWeyQf9fCD5uBADn2JvUxfz4Pb1KcWfJ-wTMUfF2SaeWDNlIQ5F9Qd4OgWYY0iT2Z_xTL3cSneW_GYKNq5SeWlAGO6hx-hOH7-zJnPyiacPMJacu7698cZYzbUn9w6PuYOtuKsYA0j4dKDninpmG7L9PPsbD3P_7z1EZyIiepzN7DkNv02ctFxf_0rcAP-WRiQkYjZN4wxnXnoYxqhQZ_IX62QMLlhlITPfTrLkvivKZfevGlsvr_enVsnHFZ_0Ndj-To4c",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"merchantTransactionID\":\"DMIlmFrffCfdCvjpDH\",\n\t\"checkoutRequestID\":\"dev-test-1548742120\",\n\t\"receiptNumber\":\"receipt-DMIlmFrffCfdCvjpDH\" ,\n    \"statusCode\":200,\n    \"statusDescription\":\"Accepted payment\"\n}"
+				},
+				"url": {
+					"raw": "https://beep2.cellulant.com:9212/checkout/v2/custom/requests/acknowledge-payments",
+					"protocol": "https",
+					"host": [
+						"beep2",
+						"cellulant",
+						"com"
+					],
+					"port": "9212",
+					"path": [
+						"checkout",
+						"v2",
+						"custom",
+						"requests",
+						"acknowledge-payments"
+					]
+				},
+				"description": "Acknowledge the payments for the checkout request made"
+			},
+			"response": []
+		},
+		{
+			"name": "Initiate Refund",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk4ODVmOTc2MzUxZjE1OGQ3OTAyNWQ2ZDMyYmEwYWQ1MTM0YWMwOTM1MmJhOTI3MGY4NGEyODQ0N2M3OWMzZTFlMTA4YmVlZTdjYmJhYmI3In0.eyJhdWQiOiI2MDgiLCJqdGkiOiI5ODg1Zjk3NjM1MWYxNThkNzkwMjVkNmQzMmJhMGFkNTEzNGFjMDkzNTJiYTkyNzBmODRhMjg0NDdjNzljM2UxZTEwOGJlZWU3Y2JiYWJiNyIsImlhdCI6MTU0ODc1MTg3NCwibmJmIjoxNTQ4NzUxODc0LCJleHAiOjE1NDg3NTE5OTQsInN1YiI6IiIsInNjb3BlcyI6W119.skrQwBTJ3qgxHgGJYZ7f5U9zAiR920VqHvwUKvgPTPjqxJIq3dWgLCsy6thrXzsnLy_wET6sfaOZ3lv215qETFlW31ub372ycjCle5uTwhqR2gid9FvLGwfltJ1-lMAZCurO_8y20ESew89WhirPfQjkr6c5wXeO-eIS7H1WKZ9OQ0EA_vEFWfTKAXjXj0MJGLv6W9N7UpnP7_0NGlaOSibHEacd-H8a1hak6Gts7QQI9YkncwmQwh7E7metKHfNqdZFn-G3vEqrATqCU6o-1qvxO0mYbpYLtrBTMchuRMYdkjAQ2w8BBqKPUvKrRFEsPGUOukUE5oG8bLuFG2jVKzwTqIfJ57GXgF1q1ggX62hJ-JzfdoYVTKhRC21q_dFmihAMT2L_OHqUzY0sBDJpcrXzEq-6-Zj4yCN2aWeyQf9fCD5uBADn2JvUxfz4Pb1KcWfJ-wTMUfF2SaeWDNlIQ5F9Qd4OgWYY0iT2Z_xTL3cSneW_GYKNq5SeWlAGO6hx-hOH7-zJnPyiacPMJacu7698cZYzbUn9w6PuYOtuKsYA0j4dKDninpmG7L9PPsbD3P_7z1EZyIiepzN7DkNv02ctFxf_0rcAP-WRiQkYjZN4wxnXnoYxqhQZ_IX62QMLlhlITPfTrLkvivKZfevGlsvr_enVsnHFZ_0Ndj-To4c",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"merchantTransactionID\":\"DMIlmFrffCfdCvjpDH\",\n\t\"checkoutRequestID\":\"249792\",\n\t\"refundType\":\"full\" ,\n    \"refundAmount\":\"101\",\n    \"narration\":\"sasa\"\n}"
+				},
+				"url": {
+					"raw": "https://beep2.cellulant.com:9212/checkout/v2/custom/requests/initiate-refunds",
+					"protocol": "https",
+					"host": [
+						"beep2",
+						"cellulant",
+						"com"
+					],
+					"port": "9212",
+					"path": [
+						"checkout",
+						"v2",
+						"custom",
+						"requests",
+						"initiate-refunds"
+					]
+				},
+				"description": "Initiate a refund request for a transaction that was accepted."
+			},
+			"response": []
+		}
+	]
+}
